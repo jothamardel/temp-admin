@@ -14,6 +14,7 @@
     "@reach/portal": "^0.16.2",
     "@react-google-maps/api": "^2.7.0",
     "@react-pdf/renderer": "^2.0.21",
+    "@types/react": "^18.0.24",
     "apexcharts": "^3.31.0",
     "axios": "^0.24.0",
     "body-scroll-lock": "^4.0.0-beta.0",
