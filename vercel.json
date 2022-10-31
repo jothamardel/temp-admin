@@ -1,0 +1,8 @@
+{
+  "build": {
+    "env": {
+      "NEXT_PUBLIC_REST_API_ENDPOINT": "https://pandomart-bazaar.herokuapp.com/api/v1",
+      "NEXT_PUBLIC_SHOP_URL": ""
+    }
+  }
+}
