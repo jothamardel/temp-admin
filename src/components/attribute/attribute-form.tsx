@@ -11,6 +11,7 @@ import { useCreateAttributeMutation } from "@data/attributes/use-attribute-creat
 import { useUpdateAttributeMutation } from "@data/attributes/use-attribute-update.mutation";
 import { useState } from "react";
 import Alert from "@components/ui/alert";
+// @ts-ignore
 import { animateScroll } from "react-scroll";
 
 type FormValues = {
@@ -62,6 +63,7 @@ export default function CreateOrUpdateAttributeForm({ initialValues }: IProps) {
         {
           onError: (error: any) => {
             setErrorMessage(error?.response?.data?.message);
+            // @ts-ignore
             animateScroll.scrollToTop();
           },
         }
@@ -130,7 +132,7 @@ export default function CreateOrUpdateAttributeForm({ initialValues }: IProps) {
 
           <Card className="w-full sm:w-8/12 md:w-2/3">
             <div>
-              {fields.map((item, index) => (
+              {fields.map((item: any, index) => (
                 <div
                   className="border-b border-dashed border-border-200 last:border-0 py-5 md:py-8"
                   key={item.id}
@@ -185,10 +187,12 @@ export default function CreateOrUpdateAttributeForm({ initialValues }: IProps) {
           )}
 
           <Button loading={creating || updating}>
-            {initialValues
-              ? t("form:item-description-update")
-              : t("form:item-description-add")}{" "}
-            {t("common:attribute")}
+            <>
+              {initialValues
+                ? t("form:item-description-update")
+                : t("form:item-description-add")}{" "}
+              {t("common:attribute")}
+            </>
           </Button>
         </div>
       </form>
