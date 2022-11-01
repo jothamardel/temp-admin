@@ -5,12 +5,13 @@ import { useEffect } from "react";
 import AddressCard from "@components/address/address-card";
 import { AddressHeader } from "@components/address/address-header";
 import { useTranslation } from "next-i18next";
-import { Address } from "__generated__/__types__";
+// import { Address } from "__generated__/__types__";
 
 interface AddressesProps {
-  addresses: Address[] | undefined;
+  addresses: [] | undefined;
   label: string;
-  atom: WritableAtom<Address | null, Address>;
+  atom: WritableAtom<any | null, any>;
+  // atom: WritableAtom<Address | null, Address>;
   className?: string;
   userId: string;
   count: number;
@@ -33,9 +34,10 @@ export const AddressGrid: React.FC<AddressesProps> = ({
   useEffect(() => {
     if (addresses?.length) {
       if (selectedAddress?.id) {
-        const index = addresses.findIndex((a) => a.id === selectedAddress.id);
+        const index = addresses.findIndex((a: {id: string; }) => a.id === selectedAddress.id);
         setAddress(addresses[index]);
       } else {
+        // @ts-ignore
         setAddress(addresses?.[0]);
       }
     }
@@ -51,7 +53,7 @@ export const AddressGrid: React.FC<AddressesProps> = ({
         <RadioGroup value={selectedAddress} onChange={setAddress}>
           <RadioGroup.Label className="sr-only">{label}</RadioGroup.Label>
           <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
-            {addresses?.map((address) => (
+            {addresses?.map((address: {id: string;}) => (
               <RadioGroup.Option value={address} key={address.id}>
                 {({ checked }) => (
                   <AddressCard

@@ -47,7 +47,7 @@ const Coupon = () => {
       </p>
     );
   }
-  function onSubmit({ code }: { code: string }) {
+  function onSubmit({ code }: any) {
     verifyCoupon(
       {
         code,
@@ -83,7 +83,8 @@ const Coupon = () => {
         variant="outline"
         className="mb-4 sm:mb-0 sm:me-4 flex-1"
         dimension="small"
-        error={t(errors?.code?.message!)}
+        // @ts-ignore
+        error={t(`${errors?.code?.message}`)}
       />
       <Button
         loading={loading}

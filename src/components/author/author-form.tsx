@@ -244,6 +244,7 @@ export default function CreateOrUpdateAuthorForm({ initialValues }: IProps) {
                     dateFormat="dd/MM/yyyy"
                     onChange={onChange}
                     onBlur={onBlur}
+                    // @ts-ignore
                     selected={value}
                     selectsStart
                     startDate={new Date()}
@@ -265,6 +266,7 @@ export default function CreateOrUpdateAuthorForm({ initialValues }: IProps) {
                     dateFormat="dd/MM/yyyy"
                     onChange={onChange}
                     onBlur={onBlur}
+                    //@ts-ignore
                     selected={value}
                     selectsEnd
                     startDate={new Date()}
@@ -345,9 +347,11 @@ export default function CreateOrUpdateAuthorForm({ initialValues }: IProps) {
         )}
 
         <Button loading={updating || creating}>
-          {initialValues
-            ? t("form:button-label-update-author")
-            : t("form:button-label-add-author")}
+          <>
+            {initialValues
+              ? t("form:button-label-update-author")
+              : t("form:button-label-add-author")}
+          </>
         </Button>
       </div>
     </form>

@@ -751,6 +751,13 @@ export declare type RegisterInput = {
   _id?: Scalars["String"];
 };
 
+export declare type RegisterAdminInput = {
+  email: Scalars["String"];
+  password: Scalars["String"];
+  name: Scalars["String"];
+  permission?: Permission;
+};
+
 export type ChangePasswordInput = {
   oldPassword: Scalars["String"];
   newPassword: Scalars["String"];

@@ -156,12 +156,15 @@ const LoginForm = () => {
 
           <div className="text-sm sm:text-base text-body text-center">
             {t("form:text-no-account")}{" "}
-            <Link
-              href="/register"
-              className="ms-1 underline text-accent font-semibold transition-colors duration-200 focus:outline-none hover:text-accent-hover focus:text-accent-700 hover:no-underline focus:no-underline"
-            >
-              {t("form:link-register-shop-owner")}
-            </Link>
+            {
+              // @ts-ignore
+              <Link
+                href="/register"
+                className="ms-1 underline text-accent font-semibold transition-colors duration-200 focus:outline-none hover:text-accent-hover focus:text-accent-700 hover:no-underline focus:no-underline"
+              >
+                {t("form:link-register-shop-owner")}
+              </Link>
+            }
           </div>
 
           {errorMsg ? (
@@ -192,7 +195,6 @@ interface AdminTokenProps {
 const LoginAdmin = ({ setShowTokenInput }: AdminTokenProps) => {
   const router = useRouter();
   const { mutate: login, isLoading: loading, isError, serverError, setServerError } = useTokenMutation(router);
-  const [errorMsg, setErrorMsg] = useState("");
   const { t } = useTranslation();
 
   const {

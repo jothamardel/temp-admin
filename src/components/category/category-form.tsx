@@ -64,7 +64,10 @@ function SelectTypes({
         options={data?.types!}
         isLoading={isLoading}
       />
-      <ValidationError message={t(errors.type?.message)} />
+      {
+        // @ts-ignore
+        <ValidationError message={t(errors.type?.message)} />
+      }
     </div>
   );
 }
@@ -264,9 +267,11 @@ export default function CreateOrUpdateCategoriesForm({
         )}
 
         <Button loading={creating || updating}>
-          {initialValues
-            ? t("form:button-label-update-category")
-            : t("form:button-label-add-category")}
+          <>
+            {initialValues
+              ? t("form:button-label-update-category")
+              : t("form:button-label-add-category")}
+          </>
         </Button>
       </div>
     </form>

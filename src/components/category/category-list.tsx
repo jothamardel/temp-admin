@@ -1,4 +1,4 @@
-import Pagination from "@components/ui/pagination";
+
 import { Table } from "@components/ui/table";
 import ActionButtons from "@components/common/action-buttons";
 import { getIcon } from "@utils/get-icon";
@@ -13,14 +13,13 @@ import TitleWithSort from "@components/ui/title-with-sort";
 
 export type IProps = {
   categories: CategoryPaginator | undefined | null;
-  onPagination: (key: number) => void;
+  onPagination?: (key: number) => void;
   onSort: (current: any) => void;
   onOrder: (current: string) => void;
   searchTerm: string;
 };
 const CategoryList = ({
   categories,
-  onPagination,
   onSort,
   onOrder,
   searchTerm
@@ -65,7 +64,7 @@ const CategoryList = ({
       render: (id: string) => {
         return (
           <span className="flex items-center justify-center">
-            <input type="checkbox" onClick={e => {
+            <input type="checkbox" onClick={() => {
               const newArr = [...selected_cats];
               const findId = newArr.find((item: string) => item === id);
               if (!findId) {

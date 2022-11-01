@@ -52,28 +52,30 @@ const Cart = () => {
         </button>
       </header>
       {/* End of cart header */}
-
-      <AnimateSharedLayout>
-        <motion.div layout className="flex-grow pb-20">
-          {items.length > 0 ? (
-            items?.map((item) => <CartItem item={item} key={item.id} />)
-          ) : (
-            <motion.div
-              layout
-              initial="from"
-              animate="to"
-              exit="from"
-              variants={fadeInOut(0.25)}
-              className="h-full flex flex-col items-center justify-center"
-            >
-              <EmptyCartIcon width={140} height={176} />
-              <h4 className="mt-6 text-base font-semibold">
-                {t("text-no-products")}
-              </h4>
-            </motion.div>
-          )}
-        </motion.div>
-      </AnimateSharedLayout>
+      {
+        // @ts-ignore
+        <AnimateSharedLayout>
+          <motion.div layout className="flex-grow pb-20">
+            {items.length > 0 ? (
+              items?.map((item) => <CartItem item={item} key={item.id} />)
+            ) : (
+              <motion.div
+                layout
+                initial="from"
+                animate="to"
+                exit="from"
+                variants={fadeInOut(0.25)}
+                className="h-full flex flex-col items-center justify-center"
+              >
+                <EmptyCartIcon width={140} height={176} />
+                <h4 className="mt-6 text-base font-semibold">
+                  {t("text-no-products")}
+                </h4>
+              </motion.div>
+            )}
+          </motion.div>
+        </AnimateSharedLayout>
+      }
       {/* End of cart items */}
 
       <footer className="fixed bottom-0 w-full max-w-md py-5 px-6 z-10 bg-light">

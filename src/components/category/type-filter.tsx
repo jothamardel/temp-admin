@@ -13,7 +13,7 @@ type Props = {
 export default function TypeFilter({ onTypeFilter, className }: Props) {
   const { t } = useTranslation();
 
-  const { data, isLoading: loading } = useTypesQuery();
+  const { isLoading: loading } = useTypesQuery();
   const {data: newData} = useNewCategoriesQuery();
 
 

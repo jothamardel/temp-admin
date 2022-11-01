@@ -2,7 +2,8 @@ import {
   UpdateUser,
   CreateUser,
   LoginInput,
-  RegisterInput,
+  // RegisterInput,
+  RegisterAdminInput,
   ChangePasswordInput,
   ForgetPasswordInput,
   VerifyForgetPasswordTokenInput,
@@ -29,8 +30,8 @@ class User extends Base<CreateUser, UpdateUser> {
     return http.post(url);
   };
 
-  register = async (url: string, variables: RegisterInput) => {
-    return this.http<RegisterInput>(url, "post", variables);
+  register = async (url: string, variables: RegisterAdminInput) => {
+    return this.http<RegisterAdminInput>(url, "post", variables);
   };
 
   changePassword = async (url: string, variables: ChangePasswordInput) => {

@@ -100,7 +100,7 @@ const AuthorList = ({ authors, onPagination, onSort, onOrder }: IProps) => {
       key: "approve",
       align: "center" as AlignType,
       render: (is_approved: boolean, record: any) => {
-        const { mutate: updateAuthor, isLoading: updating } =
+        const { mutate: updateAuthor, } =
           useUpdateAuthorMutation();
         function handleOnClick() {
           updateAuthor({
