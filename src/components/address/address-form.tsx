@@ -63,7 +63,10 @@ const AddressForm: React.FC<any> = ({ onSubmit }) => {
         {({ register, formState: { errors } }) => (
           <>
             <div>
-              <Label>{t("text-type")}</Label>
+              {
+                //@ts-ignore
+                <Label>{t("text-type")}</Label>
+              }
               <div className="space-s-4 flex items-center">
                 <Radio
                   id="billing"
@@ -127,7 +130,9 @@ const AddressForm: React.FC<any> = ({ onSubmit }) => {
             />
 
             <Button className="w-full col-span-2">
-              {address ? t("text-update") : t("text-save")} {t("text-address")}
+              <>
+                {address ? t("text-update") : t("text-save")} {t("text-address")}
+              </>
             </Button>
           </>
         )}

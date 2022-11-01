@@ -5,6 +5,8 @@ type FormProps<TFormValues> = {
   onSubmit: SubmitHandler<TFormValues>;
   children: (methods: UseFormReturn<TFormValues>) => React.ReactNode;
   validationSchema?: any;
+  className?: string;
+  options?:{};
 };
 
 export const Form = <
