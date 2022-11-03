@@ -141,7 +141,10 @@ const VerifiedItemList: React.FC<Props> = ({ className }) => {
       {use_wallet && !Boolean(payableAmount) ? null : (
         <PaymentGrid className="bg-light p-5 border border-gray-200 mt-10" />
       )}
-      <PlaceOrderAction>{t("text-place-order")}</PlaceOrderAction>
+      {
+        // @ts-ignore
+        <PlaceOrderAction>{t("text-place-order")}</PlaceOrderAction>
+      }
     </div>
   );
 };

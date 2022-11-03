@@ -44,9 +44,12 @@ const UnverifiedItemList = () => {
           value={t("text-calculated-checkout")}
         />
       </div>
-      <CheckAvailabilityAction>
-        {t("text-check-availability")}
-      </CheckAvailabilityAction>
+      {
+        // @ts-ignore
+        <CheckAvailabilityAction>
+          {t("text-check-availability")}
+        </CheckAvailabilityAction>
+      }
     </div>
   );
 };

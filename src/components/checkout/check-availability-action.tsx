@@ -68,6 +68,8 @@ export const CheckAvailabilityAction: React.FC = (props) => {
 
   return (
     <>
+    {
+      // @ts-ignore
       <Button
         loading={loading}
         className="w-full mt-5"
@@ -75,6 +77,7 @@ export const CheckAvailabilityAction: React.FC = (props) => {
         disabled={isEmpty}
         {...props}
       />
+    }
       {errorMessage && (
         <div className="mt-3">
           <ValidationError message={t(errorMessage)} />

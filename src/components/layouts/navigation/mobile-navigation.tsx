@@ -2,6 +2,7 @@ import { useUI } from "@contexts/ui.context";
 import DrawerWrapper from "@components/ui/drawer-wrapper";
 import Drawer from "@components/ui/drawer";
 
+// @ts-ignore
 const MobileNavigation: React.FC = ({ children }) => {
   const { displaySidebar, closeSidebar } = useUI();
 

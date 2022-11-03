@@ -2,7 +2,7 @@ import { BanUser } from "@components/icons/ban-user";
 import EditIcon from "@components/icons/edit";
 import Trash from "@components/icons/trash";
 import { Eye } from "@components/icons/eye-icon";
-import { WalletPointsIcon } from "@components/icons/wallet-point";
+// import { WalletPointsIcon } from "@components/icons/wallet-point";
 import Link from "@components/ui/link";
 import { useTranslation } from "next-i18next";
 import { CheckMarkCircle } from "@components/icons/checkmark-circle";
@@ -32,8 +32,8 @@ const ActionButtons = ({
   deleteModalView,
   editUrl,
   detailsUrl,
-  userStatus = false,
-  isUserActive = false,
+  // userStatus = false,
+  // isUserActive = false,
   isShopActive,
   approveButton = false,
   showAddWalletPoints = false,

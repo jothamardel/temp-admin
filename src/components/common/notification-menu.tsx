@@ -51,6 +51,7 @@ const NotificationMenu: React.FC<MenuType> = ({ data }) => {
       </button>
 
       {renderLayer(
+        // @ts-ignore
         <AnimatePresence>
           {isOpen && (
             <motion.div

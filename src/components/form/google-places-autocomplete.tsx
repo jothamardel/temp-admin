@@ -22,6 +22,7 @@ export default function GooglePlacesAutocomplete({
 
   const [autocomplete, setAutocomplete] = React.useState<any>(null);
 
+  // @ts-ignore
   const onLoad = React.useCallback(function callback(autocompleteInstance) {
     setAutocomplete(autocompleteInstance);
   }, []);
@@ -79,6 +80,7 @@ export default function GooglePlacesAutocomplete({
     return <div>{t("common:text-map-cant-load")}</div>;
   }
   return isLoaded ? (
+    // @ts-ignore
     <Autocomplete
       onLoad={onLoad}
       onPlaceChanged={onPlaceChanged}

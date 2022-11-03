@@ -38,7 +38,7 @@ export const PlaceOrderAction: React.FC = (props) => {
       customer_contact,
       customer,
       payment_gateway,
-      token,
+      // token,
     },
   ] = useAtom(checkoutAtom);
   const [discount] = useAtom(discountAtom);

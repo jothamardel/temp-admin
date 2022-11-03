@@ -1,3 +1,4 @@
+// @ts-ignore
 import { SUPER_ADMIN, ADMIN } from "@utils/constants";
 import dynamic from "next/dynamic";
 
@@ -11,7 +12,9 @@ export default function AppLayout({
   userPermissions: string[];
 }) {
   if (userPermissions?.includes(ADMIN)) {
+    // @ts-ignore
     return <AdminLayout {...props} />;
   }
+  // @ts-ignore
   return <OwnerLayout {...props} />;
 }

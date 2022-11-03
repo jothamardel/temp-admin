@@ -1,13 +1,14 @@
 import Button from '@components/ui/button';
-import { verifiedTokenAtom } from '@store/checkout';
+// import { verifiedTokenAtom } from '@store/checkout';
 import {
   Elements,
   CardElement,
   useStripe,
   useElements,
 } from '@stripe/react-stripe-js';
+// @ts-ignore
 import getStripe from '@lib/get-stripejs';
-import { useAtom } from 'jotai';
+// import { useAtom } from 'jotai';
 import { useTranslation } from 'next-i18next';
 import { useState } from 'react';
 
@@ -16,7 +17,7 @@ const StripeForm: React.FC = () => {
   const stripe = useStripe();
   const elements = useElements();
   const [loading, setLoading] = useState(false);
-  const [_, setVerifiedToken] = useAtom(verifiedTokenAtom);
+  // const [_, setVerifiedToken] = useAtom(verifiedTokenAtom);
   const handleSubmit: React.FormEventHandler<HTMLFormElement> = async (e) => {
     // Block native form submission.
     e.preventDefault();
@@ -40,7 +41,7 @@ const StripeForm: React.FC = () => {
       return;
     }
     if (token) {
-      setVerifiedToken(token.id);
+      // setVerifiedToken(token.id);
     }
     setLoading(false);
   };

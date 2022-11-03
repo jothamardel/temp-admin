@@ -30,6 +30,7 @@ const SortForm: React.FC<Props> = ({
         {showLabel && <Label>{t("filter-by-order")}</Label>}
         <Select
           options={options}
+          // @ts-ignore
           onChange={onOrderChange}
           name="orderBy"
           placeholder={t("filter-by-order-placeholder")}
@@ -42,6 +43,7 @@ const SortForm: React.FC<Props> = ({
             { id: 1, value: "asc", label: "ASC" },
             { id: 2, value: "desc", label: "DESC" },
           ]}
+          // @ts-ignore
           onChange={onSortChange}
           defaultValue={{ id: 1, value: "desc", label: "DESC" }}
           name="sortedBy"

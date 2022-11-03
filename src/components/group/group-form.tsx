@@ -168,7 +168,7 @@ export default function CreateOrUpdateTypeForm({ initialValues }: IProps) {
         ({ thumbnail, original, id }: any) => ({
           thumbnail,
           original,
-          // id,
+          id,
         })
       ),
       banners: values?.banners?.map((banner) => ({
@@ -311,7 +311,9 @@ export default function CreateOrUpdateTypeForm({ initialValues }: IProps) {
               >
                 <div className="flex items-center justify-between mb-5">
                   <Title className="mb-0">
-                    {t("common:text-banner")} {index + 1}
+                    <>
+                      {t("common:text-banner")} {index + 1}
+                    </>
                   </Title>
                   <button
                     onClick={() => {
@@ -358,9 +360,12 @@ export default function CreateOrUpdateTypeForm({ initialValues }: IProps) {
           >
             {t("form:button-label-add-banner")}
           </Button>
-  
-          {errors?.banners?.message ? (
+                    
+          {
+            // @ts-ignore
+          errors?.banners?.message ? (
             <Alert
+            // @ts-ignore
               message={t(errors?.banners?.message)}
               variant="error"
               className="mt-5"
@@ -382,9 +387,11 @@ export default function CreateOrUpdateTypeForm({ initialValues }: IProps) {
         )}
 
         <Button loading={creating || updating}>
-          {initialValues
-            ? t("form:button-label-update-group")
-            : t("form:button-label-add-group")}
+          <>
+            {initialValues
+              ? t("form:button-label-update-group")
+              : t("form:button-label-add-group")}
+          </>
         </Button>
       </div>
     </form>
