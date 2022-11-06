@@ -1,7 +1,10 @@
 import Input from "@components/ui/input";
 import Description from "@components/ui/description";
 import Card from "@components/common/card";
-import { useFormContext, useWatch } from "react-hook-form";
+import { 
+  useFormContext, 
+  // useWatch 
+} from "react-hook-form";
 import { useTranslation } from "next-i18next";
 import Label from "@components/ui/label";
 import FileInput from "@components/ui/file-input";
@@ -40,6 +43,7 @@ export default function ProductSimpleForm({ initialValues }: IProps) {
           label={`${t("form:input-label-price")}*`}
           {...register("price")}
           type="number"
+          // @ts-ignore
           error={t(errors.price?.message!)}
           variant="outline"
           className="mb-5"
@@ -48,6 +52,7 @@ export default function ProductSimpleForm({ initialValues }: IProps) {
           label={t("form:input-label-sale-price")}
           type="number"
           {...register("sale_price")}
+          // @ts-ignore
           error={t(errors.sale_price?.message!)}
           variant="outline"
           className="mb-5"
@@ -57,6 +62,7 @@ export default function ProductSimpleForm({ initialValues }: IProps) {
           label={`${t("form:input-label-quantity")}*`}
           type="number"
           {...register("quantity")}
+          // @ts-ignore
           error={t(errors.quantity?.message!)}
           variant="outline"
           className="mb-5"
@@ -65,6 +71,7 @@ export default function ProductSimpleForm({ initialValues }: IProps) {
         <Input
           label={`${t("form:input-label-sku")}*`}
           {...register("sku")}
+          // @ts-ignore
           error={t(errors.sku?.message!)}
           variant="outline"
           className="mb-5"
@@ -73,6 +80,7 @@ export default function ProductSimpleForm({ initialValues }: IProps) {
         <Input
           label={t("form:input-label-width")}
           {...register("width")}
+          // @ts-ignore
           error={t(errors.width?.message!)}
           variant="outline"
           className="mb-5"
@@ -80,6 +88,7 @@ export default function ProductSimpleForm({ initialValues }: IProps) {
         <Input
           label={t("form:input-label-height")}
           {...register("height")}
+          // @ts-ignore
           error={t(errors.height?.message!)}
           variant="outline"
           className="mb-5"
@@ -87,6 +96,7 @@ export default function ProductSimpleForm({ initialValues }: IProps) {
         <Input
           label={t("form:input-label-length")}
           {...register("length")}
+          // @ts-ignore
           error={t(errors.length?.message!)}
           variant="outline"
           className="mb-5"
@@ -124,6 +134,7 @@ export default function ProductSimpleForm({ initialValues }: IProps) {
             <Input
               label={t("form:input-label-external-product-url")}
               {...register("external_product_url")}
+              // @ts-ignore
               error={t(errors.external_product_url?.message!)}
               variant="outline"
               className="mb-5"
@@ -131,6 +142,7 @@ export default function ProductSimpleForm({ initialValues }: IProps) {
             <Input
               label={t("form:input-label-external-product-button-text")}
               {...register("external_product_button_text")}
+              // @ts-ignore
               error={t(errors.external_product_button_text?.message!)}
               variant="outline"
               className="mb-5"

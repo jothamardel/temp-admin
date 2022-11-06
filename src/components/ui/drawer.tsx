@@ -43,6 +43,8 @@ const Drawer: FC<SidebarProps> = ({
 
   return (
     <Portal>
+      {
+        // @ts-ignore
       <AnimatePresence>
         {open && (
           <motion.aside
@@ -82,6 +84,7 @@ const Drawer: FC<SidebarProps> = ({
           </motion.aside>
         )}
       </AnimatePresence>
+      }
     </Portal>
   );
 };

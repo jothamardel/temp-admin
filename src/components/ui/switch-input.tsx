@@ -37,7 +37,9 @@ const SwitchInput = ({ control, label, name, errors, ...rest }: Props) => {
           </Switch>
         )}
       />
-      <ValidationError message={t(errors?.[name]?.message)} />
+      <ValidationError 
+      // @ts-ignore
+      message={t(errors?.[name]?.message)} />
     </div>
   );
 };

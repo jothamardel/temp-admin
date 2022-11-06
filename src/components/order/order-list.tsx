@@ -8,14 +8,14 @@ import relativeTime from "dayjs/plugin/relativeTime";
 import utc from "dayjs/plugin/utc";
 import timezone from "dayjs/plugin/timezone";
 import {
-  Order,
+  // Order,
   OrderPaginator,
   OrderStatus,
   SortOrder,
   UserAddress,
 } from "@ts-types/generated";
-import InvoicePdf from "./invoice-pdf";
-import { PDFDownloadLink } from "@react-pdf/renderer";
+// import InvoicePdf from "./invoice-pdf";
+// import { PDFDownloadLink } from "@react-pdf/renderer";
 import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
 import { useIsRTL } from "@utils/locals";

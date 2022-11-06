@@ -113,6 +113,7 @@ export default function InvoicePdf({
                       {
                         product?.variation_options?.find(
                           (item) =>
+                          // @ts-ignore
                             item?.id === product?.pivot?.variation_option_id
                         )?.title
                       }

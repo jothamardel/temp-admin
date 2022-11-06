@@ -40,7 +40,9 @@ function SelectTypes({
         options={types?.types!}
         isLoading={loading}
       />
-      <ValidationError message={t(errors.type?.message)} />
+      <ValidationError 
+      // @ts-ignore
+      message={t(errors.type?.message)} />
     </div>
   );
 }
@@ -170,6 +172,7 @@ export default function CreateOrUpdateTagForm({ initialValues }: IProps) {
           <Input
             label={t("form:input-label-name")}
             {...register("name")}
+            // @ts-ignore
             error={t(errors.name?.message!)}
             variant="outline"
             className="mb-5"
@@ -207,9 +210,11 @@ export default function CreateOrUpdateTagForm({ initialValues }: IProps) {
         )}
 
         <Button loading={creating || updating}>
+          <>
           {initialValues
             ? t("form:button-label-update-tag")
             : t("form:button-label-add-tag")}
+          </>
         </Button>
       </div>
     </form>

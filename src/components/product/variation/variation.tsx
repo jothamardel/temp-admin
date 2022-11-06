@@ -57,6 +57,7 @@ const ProductVariation = ({ productSlug }: { productSlug: string }) => {
   const { data, isLoading: loading } = useProductQuery(productSlug);
   if (loading || !data) return <div>Loading</div>;
   return (
+    // @ts-ignore
     <AttributesProvider>
       <Variation product={data} />
     </AttributesProvider>

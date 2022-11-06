@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "@components/ui/link";
 import cn from "classnames";
 import { siteSettings } from "@settings/site.settings";
-import { useSettings } from "@contexts/settings.context";
+// import { useSettings } from "@contexts/settings.context";
 
 const Logo: React.FC<React.AnchorHTMLAttributes<{}>> = ({
   className,

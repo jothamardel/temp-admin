@@ -220,6 +220,7 @@ export function getProductInputValues(
     variation_options: {
       upsert: [],
       delete: initialValues?.variation_options?.map(
+        // @ts-ignore
         (variation) => variation?.id
       ),
     },
@@ -229,6 +230,7 @@ export function getProductInputValues(
         value?.map(({ id }: any) => ({ attribute_value_id: id }))
       ),
       variation_options: {
+        // @ts-ignore
         upsert: variation_options?.map(
           ({
             options,
@@ -259,8 +261,11 @@ export function getProductInputValues(
           })
         ),
         delete: initialValues?.variation_options
+        // @ts-ignore
           ?.map((initialVariationOption) => {
+            // @ts-ignore
             const find = variation_options?.find(
+              // @ts-ignore
               (variationOption) =>
                 variationOption?.id === initialVariationOption?.id
             );
@@ -268,6 +273,7 @@ export function getProductInputValues(
               return initialVariationOption?.id;
             }
           })
+          // @ts-ignore
           .filter((item) => item !== undefined),
       },
     }),

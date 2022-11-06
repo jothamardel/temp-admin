@@ -2,7 +2,9 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm, UseFormReturn, SubmitHandler } from "react-hook-form";
 
 type FormProps<TFormValues> = {
+  // @ts-ignore
   onSubmit: SubmitHandler<TFormValues>;
+  // @ts-ignore
   children: (methods: UseFormReturn<TFormValues>) => React.ReactNode;
   validationSchema?: any;
   className?: string;

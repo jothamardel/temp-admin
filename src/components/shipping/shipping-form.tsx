@@ -65,6 +65,7 @@ export default function CreateOrUpdateShippingForm({ initialValues }: IProps) {
   const type = useWatch({ name: "type", control });
 
   return (
+    // @ts-ignore
     <form onSubmit={handleSubmit(onSubmit)}>
       <div className="flex flex-wrap my-5 sm:my-8">
         <Description
@@ -80,6 +81,7 @@ export default function CreateOrUpdateShippingForm({ initialValues }: IProps) {
           <Input
             label={t("form:input-label-name")}
             {...register("name", { required: "Name is required" })}
+            // @ts-ignore
             error={t(errors.name?.message!)}
             variant="outline"
             className="mb-5"
@@ -113,6 +115,7 @@ export default function CreateOrUpdateShippingForm({ initialValues }: IProps) {
               label={t("form:input-label-amount")}
               {...register("amount")}
               type="number"
+              // @ts-ignore
               error={t(errors.amount?.message!)}
               variant="outline"
               className="mb-5"
@@ -134,10 +137,12 @@ export default function CreateOrUpdateShippingForm({ initialValues }: IProps) {
         )}
 
         <Button loading={creating || updating} disabled={creating || updating}>
-          {initialValues
-            ? t("form:button-label-update")
-            : t("form:button-label-add")}{" "}
-          {t("form:button-label-shipping")}
+          <>
+            {initialValues
+              ? t("form:button-label-update")
+              : t("form:button-label-add")}{" "}
+            {t("form:button-label-shipping")}
+          </>
         </Button>
       </div>
     </form>

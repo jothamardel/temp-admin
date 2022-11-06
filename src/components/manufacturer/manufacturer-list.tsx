@@ -107,6 +107,7 @@ const ManufacturerList = ({
       key: "approve",
       align: "center" as AlignType,
       render: (is_approved: boolean, record: any) => {
+        // @ts-ignore
         const { mutate: updateManufacturer, isLoading: updating } =
           useUpdateManufacturerMutation();
         function handleOnClick() {

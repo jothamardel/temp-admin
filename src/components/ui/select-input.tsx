@@ -30,11 +30,17 @@ const SelectInput = ({
       render={({ field }) => (
         <Select
           {...field}
+          // @ts-ignore
           getOptionLabel={getOptionLabel}
+          // @ts-ignore
           getOptionValue={getOptionValue}
+          // @ts-ignore
           isMulti={isMulti}
+          // @ts-ignore
           isClearable={isClearable}
+          // @ts-ignore
           isLoading={isLoading}
+          // @ts-ignore
           options={options}
         />
       )}

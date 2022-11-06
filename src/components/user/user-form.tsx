@@ -31,7 +31,7 @@ const CustomerCreateForm = () => {
   const { t } = useTranslation();
   const { mutate: registerUser, isLoading: loading } = useCreateUserMutation();
   const {mutate, isLoading} = useCreateNewUserMutation();
-  const { data: stateData } = useModalState()
+  // const { data: stateData } = useModalState()
   
   const defaultValues = data ? {...data} : {
     email: "",
@@ -148,6 +148,7 @@ const CustomerCreateForm = () => {
             type="text"
             variant="outline"
             className="mb-4"
+            // @ts-ignore
             error={t(errors.fullname?.message!)}
           />
           <Input
@@ -156,6 +157,7 @@ const CustomerCreateForm = () => {
             type="email"
             variant="outline"
             className="mb-4"
+            // @ts-ignore
             error={t(errors.email?.message!)}
           />
           <Input
@@ -164,6 +166,7 @@ const CustomerCreateForm = () => {
             type="text"
             variant="outline"
             className="mb-4"
+            // @ts-ignore
             error={t(errors.username?.message!)}
           />
           <Input
@@ -172,6 +175,7 @@ const CustomerCreateForm = () => {
             type="text"
             variant="outline"
             className="mb-4"
+            // @ts-ignore
             error={t(errors.country?.message!)}
           />
           <Input
@@ -180,6 +184,7 @@ const CustomerCreateForm = () => {
             type="text"
             variant="outline"
             className="mb-4"
+            // @ts-ignore
             error={t(errors.phone?.message!)}
           />
           <Input
@@ -188,6 +193,7 @@ const CustomerCreateForm = () => {
             type="file"
             variant="outline"
             className="mb-4"
+            // @ts-ignore
             error={t(errors.profile_picture?.message!)}
           />
           <Input
@@ -196,6 +202,7 @@ const CustomerCreateForm = () => {
             type="text"
             variant="outline"
             className="mb-4"
+            // @ts-ignore
             error={t(errors.bvn?.message!)}
           />
           <Input
@@ -204,6 +211,7 @@ const CustomerCreateForm = () => {
             type="text"
             variant="outline"
             className="mb-4"
+            // @ts-ignore
             error={t(errors.nationality?.message!)}
           />
           <Input
@@ -212,6 +220,7 @@ const CustomerCreateForm = () => {
             type="text"
             variant="outline"
             className="mb-4"
+            // @ts-ignore
             error={t(errors.occupation?.message!)}
           />
           <Input
@@ -220,11 +229,13 @@ const CustomerCreateForm = () => {
             type="text"
             variant="outline"
             className="mb-4"
+            // @ts-ignore
             error={t(errors.description?.message!)}
           />
           <PasswordInput
             label={t("form:input-label-password")}
             {...register("password")}
+            // @ts-ignore
             error={t(errors.password?.message!)}
             variant="outline"
             className="mb-4"

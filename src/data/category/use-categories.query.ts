@@ -8,7 +8,7 @@ import Category from "@repositories/category";
 import { API_ENDPOINTS } from "@utils/api/endpoints";
 import { CategoryPaginator } from "@ts-types/generated";
 import axios from "axios";
-import { getAuthCredentials } from "@utils/auth-utils";
+// import { getAuthCredentials } from "@utils/auth-utils";
 
 
 const fetchCategories = async ({
@@ -66,7 +66,7 @@ const useCategoriesQuery = (options: CategoriesQueryOptionsType) => {
 
 const fetchNewCategories = async () => {
 
-  const { token } = getAuthCredentials();
+  // const { token } = getAuthCredentials();
   
   const {
     data: { data },

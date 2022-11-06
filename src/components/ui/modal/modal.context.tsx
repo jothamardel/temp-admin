@@ -89,6 +89,7 @@ const ModalActionContext = React.createContext<
 >(undefined);
 ModalActionContext.displayName = "ModalActionContext";
 
+// @ts-ignore
 export const ModalProvider: React.FC = ({ children }) => {
   const [state, dispatch] = React.useReducer(modalReducer, initialState);
   return (

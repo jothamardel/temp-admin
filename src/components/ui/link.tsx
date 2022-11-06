@@ -5,7 +5,10 @@ const Link: React.FC<NextLinkProps & { className?: string; title?: string; child
   ({ href, children, ...props }) => {
     return (
       <NextLink href={href}>
-        <a {...props}>{children}</a>
+        {
+          // @ts-ignore
+          <a {...props}>{children}</a>
+        }
       </NextLink>
     );
   };

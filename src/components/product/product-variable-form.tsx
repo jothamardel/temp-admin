@@ -162,6 +162,7 @@ export default function ProductVariableForm({ shopId, initialValues }: IProps) {
                           type="number"
                           {...register(`variation_options.${index}.price`)}
                           error={t(
+                            // @ts-ignore
                             errors.variation_options?.[index]?.price?.message
                           )}
                           variant="outline"
@@ -172,6 +173,7 @@ export default function ProductVariableForm({ shopId, initialValues }: IProps) {
                           type="number"
                           {...register(`variation_options.${index}.sale_price`)}
                           error={t(
+                            // @ts-ignore
                             errors.variation_options?.[index]?.sale_price
                               ?.message
                           )}
@@ -182,6 +184,7 @@ export default function ProductVariableForm({ shopId, initialValues }: IProps) {
                           label={`${t("form:input-label-sku")}*`}
                           {...register(`variation_options.${index}.sku`)}
                           error={t(
+                            // @ts-ignore
                             errors.variation_options?.[index]?.sku?.message
                           )}
                           variant="outline"
@@ -192,6 +195,7 @@ export default function ProductVariableForm({ shopId, initialValues }: IProps) {
                           type="number"
                           {...register(`variation_options.${index}.quantity`)}
                           error={t(
+                            // @ts-ignore
                             errors.variation_options?.[index]?.quantity?.message
                           )}
                           variant="outline"
@@ -223,6 +227,7 @@ export default function ProductVariableForm({ shopId, initialValues }: IProps) {
                             />
                             <ValidationError
                               message={t(
+                                // @ts-ignore
                                 errors?.variation_options?.[index]
                                   ?.digital_file_input?.message
                               )}
@@ -241,6 +246,7 @@ export default function ProductVariableForm({ shopId, initialValues }: IProps) {
                         <Checkbox
                           {...register(`variation_options.${index}.is_disable`)}
                           error={t(
+                            // @ts-ignore
                             errors.variation_options?.[index]?.is_disable
                               ?.message
                           )}

@@ -42,8 +42,9 @@ export default function CategoryTypeFilter({
           getOptionLabel={(option: any) => option.name}
           getOptionValue={(option: any) => option.slug}
           placeholder={t("common:filter-by-group-placeholder")}
+          // @ts-ignore
           onChange={onTypeFilter}
-        />
+          />
       </div>
       <div className="w-full">
         <Label>{t("common:filter-by-category")}</Label>
@@ -53,6 +54,7 @@ export default function CategoryTypeFilter({
           getOptionValue={(option: any) => option.slug}
           placeholder={t("common:filter-by-category-placeholder")}
           isLoading={categoryLoading}
+          // @ts-ignore
           onChange={onCategoryFilter}
         />
       </div>

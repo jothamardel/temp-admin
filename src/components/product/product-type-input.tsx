@@ -29,7 +29,11 @@ const ProductTypeInput = () => {
           getOptionValue={(option: any) => option.value}
           options={productType}
         />
-        <ValidationError message={t(errors.product_type?.message)} />
+
+        <ValidationError 
+          // @ts-ignore
+          message={t(errors.product_type?.message)} 
+        />
       </div>
     </Card>
   );

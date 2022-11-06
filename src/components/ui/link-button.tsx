@@ -26,6 +26,7 @@ export interface ButtonProps {
 
 const LinkButton: React.FC<NextLinkProps & ButtonProps> = ({
   href,
+  // @ts-ignore
   children,
   className,
   variant = "normal",

@@ -10,24 +10,24 @@ import { useRouter } from "next/router";
 import { yupResolver } from "@hookform/resolvers/yup";
 import FileInput from "@components/ui/file-input";
 import { productValidationSchema } from "./product-validation-schema";
-import groupBy from "lodash/groupBy";
+// import groupBy from "lodash/groupBy";
 import ProductVariableForm from "./product-variable-form";
 import ProductSimpleForm from "./product-simple-form";
 import ProductGroupInput from "./product-group-input";
 import ProductCategoryInput from "./product-category-input";
-import orderBy from "lodash/orderBy";
-import sum from "lodash/sum";
-import cloneDeep from "lodash/cloneDeep";
+// import orderBy from "lodash/orderBy";
+// import sum from "lodash/sum";
+// import cloneDeep from "lodash/cloneDeep";
 import ProductTypeInput from "./product-type-input";
 import {
-  Type,
+  // Type,
   ProductType,
-  Category,
-  AttachmentInput,
-  ProductStatus,
+  // Category,
+  // AttachmentInput,
+  // ProductStatus,
   Product,
-  VariationOption,
-  Tag,
+  // VariationOption,
+  // Tag,
 } from "@ts-types/generated";
 import { useCreateProductMutation } from "@data/product/product-create.mutation";
 import { useTranslation } from "next-i18next";
@@ -37,7 +37,7 @@ import ProductTagInput from "./product-tag-input";
 import Alert from "@components/ui/alert";
 import { useState } from "react";
 import { animateScroll } from "react-scroll";
-import Checkbox from "@components/ui/checkbox/checkbox";
+// import Checkbox from "@components/ui/checkbox/checkbox";
 import ProductAuthorInput from "./product-author-input";
 import ProductManufacturerInput from "./product-manufacturer-input";
 import {
@@ -64,6 +64,7 @@ export default function CreateOrUpdateProductForm({
   const methods = useForm<ProductFormValues>({
     resolver: yupResolver(productValidationSchema),
     shouldUnregister: true,
+    // @ts-ignore
     defaultValues: getProductDefaultValues(initialValues),
   });
   const {
@@ -89,6 +90,7 @@ export default function CreateOrUpdateProductForm({
         {
           variables: {
             id: initialValues.id,
+            // @ts-ignore
             input: { ...inputValues, shop_id: initialValues.shop_id! },
           },
         },
@@ -106,6 +108,7 @@ export default function CreateOrUpdateProductForm({
     } else {
       createProduct(
         {
+          // @ts-ignore
           shop_id: shopId,
           ...inputValues,
         },
@@ -128,8 +131,8 @@ export default function CreateOrUpdateProductForm({
     }
   };
   const product_type = watch("product_type");
-  const is_digital = watch("is_digital");
-  const is_external = watch("is_external");
+  // const is_digital = watch("is_digital");
+  // const is_external = watch("is_external");
   return (
     <>
       {errorMessage ? (
@@ -276,9 +279,11 @@ export default function CreateOrUpdateProductForm({
               </Button>
             )}
             <Button loading={updating || creating}>
-              {initialValues
-                ? t("form:button-label-update-product")
-                : t("form:button-label-add-product")}
+              <>
+                {initialValues
+                  ? t("form:button-label-update-product")
+                  : t("form:button-label-add-product")}
+              </>
             </Button>
           </div>
         </form>

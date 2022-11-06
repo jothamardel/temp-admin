@@ -7,6 +7,7 @@ import { siteSettings } from "@settings/site.settings";
 import { useTranslation } from "next-i18next";
 import MobileNavigation from "@components/layouts/navigation/mobile-navigation";
 
+// @ts-ignore
 const ShopLayout: React.FC = ({ children }) => {
   const { t } = useTranslation();
   const {
@@ -36,9 +37,12 @@ const ShopLayout: React.FC = ({ children }) => {
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col transition-colors duration-150">
       <Navbar />
-      <MobileNavigation>
-        <SidebarItemMap />
-      </MobileNavigation>
+      {
+        // @ts-ignore
+        <MobileNavigation>
+          <SidebarItemMap />
+        </MobileNavigation>
+      }
 
       <div className="flex flex-1 pt-20">
         <aside className="shadow w-72 xl:w-76 hidden lg:block overflow-y-auto bg-white px-4 fixed start-0 bottom-0 h-full pt-22">

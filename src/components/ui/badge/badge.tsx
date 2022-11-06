@@ -1,6 +1,6 @@
 import cn from "classnames";
 import { useTranslation } from "next-i18next";
-import { MouseEventHandler } from "react";
+// import { MouseEventHandler } from "react";
 
 type BadgeProps = {
   className?: string;

@@ -133,6 +133,7 @@ const TaxList = ({ taxes, onSort, onOrder }: IProps) => {
     <div className="rounded overflow-hidden shadow mb-8">
       {/* @ts-ignore */}
       <Table
+      // @ts-ignore
         columns={columns}
         emptyText={t("table:empty-table-data")}
         data={taxes}

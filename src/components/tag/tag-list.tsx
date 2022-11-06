@@ -1,10 +1,10 @@
 import Pagination from "@components/ui/pagination";
 import { Table } from "@components/ui/table";
 import ActionButtons from "@components/common/action-buttons";
-import { getIcon } from "@utils/get-icon";
-import * as categoriesIcon from "@components/icons/category";
+// import { getIcon } from "@utils/get-icon";
+// import * as categoriesIcon from "@components/icons/category";
 import { ROUTES } from "@utils/routes";
-import Image from "next/image";
+// import Image from "next/image";
 import { useTranslation } from "next-i18next";
 import { useIsRTL } from "@utils/locals";
 import { SortOrder } from "@ts-types/generated";

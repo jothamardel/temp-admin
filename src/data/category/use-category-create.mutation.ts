@@ -1,6 +1,6 @@
 import { CreateCategory } from "@ts-types/generated";
 import { ROUTES } from "@utils/routes";
-import Category from "@repositories/category";
+// import Category from "@repositories/category";
 import { useRouter } from "next/router";
 import { useMutation, useQueryClient } from "react-query";
 import { API_ENDPOINTS } from "@utils/api/endpoints";

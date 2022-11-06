@@ -7,8 +7,8 @@ import { getErrorMessage } from "@utils/form-error";
 import Description from "@components/ui/description";
 import Card from "@components/common/card";
 import { useRouter } from "next/router";
-import { ROUTES } from "@utils/routes";
-import { toast } from "react-toastify";
+// import { ROUTES } from "@utils/routes";
+// import { toast } from "react-toastify";
 import { useTranslation } from "next-i18next";
 import FileInput from "@components/ui/file-input";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -251,8 +251,11 @@ export default function CreateOrUpdateManufacturerForm({
             variant="outline"
             className="mb-5"
           />
+          {
+          }
           <ProductGroupInput
             control={control}
+            // @ts-ignore
             error={t(errors?.type?.message)}
           />
           {/* Social and Icon picker */}
@@ -320,9 +323,11 @@ export default function CreateOrUpdateManufacturerForm({
         )}
 
         <Button loading={updating || creating}>
-          {initialValues
-            ? t("form:button-label-update-manufacturer-publication")
-            : t("form:button-label-add-manufacturer-publication")}
+          <>
+            {initialValues
+              ? t("form:button-label-update-manufacturer-publication")
+              : t("form:button-label-add-manufacturer-publication")}
+          </>
         </Button>
       </div>
     </form>
