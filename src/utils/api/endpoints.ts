@@ -20,7 +20,7 @@ export const API_ENDPOINTS = {
   TYPES: "types",
   PROFILE_UPDATE: "profile-update",
   LOGOUT: "logout",
-  ME: "me",
+  ME: "/user/list",
   TOKEN: "token",
   BLOCK_USER: "users/block-user",
   UNBLOCK_USER: "users/unblock-user",
