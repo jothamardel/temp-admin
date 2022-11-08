@@ -1,7 +1,8 @@
 import { MakeAdminInput, ErrorResponse } from "@ts-types/generated";
-import User from "@repositories/user";
+// import User from "@repositories/user";
+// @ts-ignore
 import { useMutation, useQueryClient } from "react-query";
-import { API_ENDPOINTS } from "@utils/api/endpoints";
+// import { API_ENDPOINTS } from "@utils/api/endpoints";
 import { toast } from "react-toastify";
 import { useTranslation } from "next-i18next";
 import axios from "axios";
@@ -13,7 +14,7 @@ export interface IMakeAdminVariables {
 }
 
 export const useMakeOrRevokeAdminMutation = () => {
-  const queryClient = useQueryClient(); 
+  // const queryClient = useQueryClient(); 
   const { t } = useTranslation();
   const { token } = getAuthCredentials();
 
@@ -42,7 +43,7 @@ export const useMakeOrRevokeAdminMutation = () => {
 };
 
 export const useUserRoles = () => {
-  const queryClient = useQueryClient();
+  // const queryClient = useQueryClient();
   const { t } = useTranslation();
   const [roles, setRoles] = useState<[]>([]);
   const { token } = getAuthCredentials();

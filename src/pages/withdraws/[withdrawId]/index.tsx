@@ -111,7 +111,9 @@ const Withdraw = () => {
                 }}
               />
 
-              <ValidationError message={t(errors?.status?.message)} />
+              <ValidationError 
+              // @ts-ignore
+              message={t(errors?.status?.message)} />
             </div>
             <Button loading={approving}>
               <span className="hidden sm:block">

@@ -21,6 +21,7 @@ import PrivateRoute from "@utils/private-route";
 import ManagedModal from "@components/ui/modal/managed-modal";
 import { CartProvider } from "@contexts/quick-cart/cart.context";
 
+// @ts-ignore
 const Noop: React.FC = ({ children }) => <>{children}</>;
 
 const AppSettings: React.FC = (props) => {
@@ -41,30 +42,49 @@ const CustomApp = ({ Component, pageProps }: AppProps) => {
   return (
     <QueryClientProvider client={queryClientRef.current}>
       <Hydrate state={pageProps.dehydratedState}>
-        <AppSettings>
-          <UIProvider>
-            <ModalProvider>
-              <>
-                <CartProvider>
-                  <DefaultSeo />
-                  {authProps ? (
-                    <PrivateRoute authProps={authProps}>
-                      <Layout {...pageProps}>
-                        <Component {...pageProps} />
-                      </Layout>
-                    </PrivateRoute>
-                  ) : (
-                    <Layout {...pageProps}>
-                      <Component {...pageProps} />
-                    </Layout>
-                  )}
-                  <ToastContainer autoClose={2000} theme="colored" />
-                  <ManagedModal />
-                </CartProvider>
-              </>
-            </ModalProvider>
-          </UIProvider>
-        </AppSettings>
+        {
+          // @ts-ignore
+          <AppSettings>
+            {
+              // @ts-ignore
+              <UIProvider>
+                {
+                  // @ts-ignore
+                  <ModalProvider>
+                    <>
+                    {
+                      // @ts-ignore
+                        <CartProvider>
+                          <DefaultSeo />
+                          {authProps ? (
+                            // @ts-ignore
+                            <PrivateRoute authProps={authProps}>
+                              <Layout {...pageProps}>
+                                {
+                                  // @ts-ignore
+                                  <Component {...pageProps} />
+                                }
+                              </Layout>
+                            </PrivateRoute>
+                          ) : (
+                            <Layout {...pageProps}>
+                              {
+                                // @ts-ignore
+                                <Component {...pageProps} />
+                              }
+                            </Layout>
+                          )}
+                          <ToastContainer autoClose={2000} theme="colored" />
+                          <ManagedModal />
+                        </CartProvider>
+                    }
+                    </>
+                  </ModalProvider>
+                }
+              </UIProvider>
+            }
+          </AppSettings>
+        }
         <ReactQueryDevtools />
       </Hydrate>
     </QueryClientProvider>

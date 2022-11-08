@@ -1,8 +1,11 @@
 import { QueryParamsType, ShopsQueryOptionsType } from "@ts-types/custom.types";
+// @ts-ignore
 import { mapPaginatorData, stringifySearchQuery } from "@utils/data-mappers";
 import { useQuery } from "react-query";
+// @ts-ignore
 import Shop from "@repositories/shop";
 import { API_ENDPOINTS } from "@utils/api/endpoints";
+// @ts-ignore
 import { Shop as TShop, ShopPaginator } from "@ts-types/generated";
 
 type Props = {

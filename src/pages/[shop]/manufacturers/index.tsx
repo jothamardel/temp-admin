@@ -56,13 +56,15 @@ export default function Manufacturers() {
 
         <div className="w-full xl:w-2/3 flex flex-col md:flex-row space-y-4 md:space-y-0 items-center ms-auto">
           <Search onSearch={handleSearch} />
-
-          <LinkButton
-            href={`/${shop}/${ROUTES.MANUFACTURERS}/create`}
-            className="h-12 md:ms-6 w-full md:w-auto"
-          >
-            <span>+ {t("form:button-label-add-manufacturer-publication")}</span>
-          </LinkButton>
+          {
+            // @ts-ignore
+            <LinkButton
+              href={`/${shop}/${ROUTES.MANUFACTURERS}/create`}
+              className="h-12 md:ms-6 w-full md:w-auto"
+            >
+              <span>+ {t("form:button-label-add-manufacturer-publication")}</span>
+            </LinkButton>
+          }
         </div>
       </Card>
 

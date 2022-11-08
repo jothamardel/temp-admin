@@ -1,10 +1,11 @@
+// @ts-ignore
 import { LoginInput, Response, ErrorResponse } from "@ts-types/generated";
 import { useMutation } from "react-query";
 import User from "@repositories/user";
 // import { API_ENDPOINTS } from "@utils/api/endpoints";
 import { useState } from "react";
 import { allowedRoles, hasAccess, setAuthCredentials } from "@utils/auth-utils";
-import { useRouter } from "next/router";
+// import { useRouter } from "next/router";
 import { ROUTES } from "@utils/routes";
 
 export interface ILoginVariables {

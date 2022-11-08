@@ -144,6 +144,7 @@ export default function ShopPage() {
         />
 
         {hasAccess(adminAndOwnerOnly, permissions) && (
+          // @ts-ignore
           <LinkButton
             size="small"
             className="absolute top-3 end-3 bg-blue-500 hover:bg-blue-600 shadow-sm"

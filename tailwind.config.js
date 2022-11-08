@@ -13,6 +13,7 @@ module.exports = {
   purge: [
     "./src/components/**/*.{js,ts,jsx,tsx}",
     "./src/pages/**/*.{js,ts,jsx,tsx}",
+    "./public/**/*.html",
   ],
   darkMode: false, // or 'media' or 'class'
   theme: {

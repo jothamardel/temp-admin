@@ -1,6 +1,6 @@
 import Card from "@components/common/card";
 import Layout from "@components/layouts/admin";
-import Search from "@components/common/search";
+// import Search from "@components/common/search";
 import CustomerList from "@components/user/user-list";
 import LinkButton from "@components/ui/link-button";
 import { useState } from "react";
@@ -38,6 +38,7 @@ export default function Customers() {
   if (loading) return <Loader text={t("common:text-loading")} />;
   if (error) return <ErrorMessage message={error.message} />;
 
+  // @ts-ignore
   function handleSearch({ searchText }: { searchText: string }) {
     // console.log("Search text: ", searchText);
     setSearchTerm(searchText);

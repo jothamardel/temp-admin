@@ -90,18 +90,20 @@ export default function ProductsPage() {
           <div className="w-full md:w-3/4 flex flex-col md:flex-row items-center">
             <div className="w-full flex items-center">
               <Search onSearch={handleSearch} />
-
-              <LinkButton
-                href={`/${shop}/products/create`}
-                className="h-12 ms-4 md:ms-6"
-              >
-                <span className="hidden md:block">
-                  + {t("form:button-label-add-product")}
-                </span>
-                <span className="md:hidden">
-                  + {t("form:button-label-add")}
-                </span>
-              </LinkButton>
+              {
+                // @ts-ignore
+                <LinkButton
+                  href={`/${shop}/products/create`}
+                  className="h-12 ms-4 md:ms-6"
+                >
+                  <span className="hidden md:block">
+                    + {t("form:button-label-add-product")}
+                  </span>
+                  <span className="md:hidden">
+                    + {t("form:button-label-add")}
+                  </span>
+                </LinkButton>
+              }
             </div>
 
             <Button

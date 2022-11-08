@@ -158,6 +158,7 @@ export default function OrderDetailsPage() {
               delivery_fee={delivery_fee}
               sales_tax={sales_tax}
               settings={settings}
+              // @ts-ignore
               order={data?.order}
             />
           }
@@ -195,7 +196,9 @@ export default function OrderDetailsPage() {
               placeholder={t("form:input-placeholder-order-status")}
             />
 
-            <ValidationError message={t(errors?.order_status?.message)} />
+            <ValidationError 
+            // @ts-ignore
+            message={t(errors?.order_status?.message)} />
           </div>
           <Button loading={updating}>
             <span className="hidden sm:block">

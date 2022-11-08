@@ -1,7 +1,7 @@
 import CategoryList from "@components/category/category-list";
 import Card from "@components/common/card";
 import Layout from "@components/layouts/admin";
-import Search from "@components/common/search";
+// import Search from "@components/common/search";
 import LinkButton from "@components/ui/link-button";
 import { useState } from "react";
 import ErrorMessage from "@components/ui/error-message";
@@ -27,7 +27,7 @@ export default function Categories() {
     data: newData
   } = useNewCategoriesQuery();
   const {
-    data,
+    // data,
     isLoading: loading,
     error,
   } = useCategoriesQuery({
@@ -43,10 +43,10 @@ export default function Categories() {
   if (loading) return <Loader text={t("common:text-loading")} />;
   if (error) return <ErrorMessage message={error.message} />;
 
-  function handleSearch({ searchText }: { searchText: string }) {
-    setSearchTerm(searchText);
-    setPage(1);
-  }
+  // function handleSearch({ searchText }: { searchText: string }) {
+  //   setSearchTerm(searchText);
+  //   setPage(1);
+  // }
   function handlePagination(current: any) {
     setPage(current);
   }
@@ -82,18 +82,20 @@ export default function Categories() {
                 setPage(1);
               }}
             />
-
-            <LinkButton
-              href={`${ROUTES.CATEGORIES}/create`}
-              className="h-12 md:ms-6 w-full md:w-auto"
-            >
-              <span className="block md:hidden xl:block">
-                + {t("form:button-label-add-categories")}
-              </span>
-              <span className="hidden md:block xl:hidden">
-                + {t("form:button-label-add")}
-              </span>
-            </LinkButton>
+            {
+              // @ts-ignore
+              <LinkButton
+                href={`${ROUTES.CATEGORIES}/create`}
+                className="h-12 md:ms-6 w-full md:w-auto"
+              >
+                <span className="block md:hidden xl:block">
+                  + {t("form:button-label-add-categories")}
+                </span>
+                <span className="hidden md:block xl:hidden">
+                  + {t("form:button-label-add")}
+                </span>
+              </LinkButton>
+            }
           </div>
         </div>
       </Card>

@@ -7,6 +7,7 @@ import {
   hasAccess,
   isAuthenticated,
 } from "@utils/auth-utils";
+// @ts-ignore
 import { SUPER_ADMIN, ADMIN } from "@utils/constants";
 import { ROUTES } from "@utils/routes";
 import AppLayout from "@components/layouts/app";
@@ -20,8 +21,10 @@ export default function Dashboard({
 }) {
   console.log("Browser permissions: ", userPermissions);
   if (userPermissions?.includes(ADMIN)) {
+    // @ts-ignore
     return <AdminDashboard />;
   }
+  // @ts-ignore
   return <OwnerDashboard />;
 }
 

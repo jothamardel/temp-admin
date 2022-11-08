@@ -48,7 +48,9 @@ export default function Orders() {
     return <Loader text={t("common:text-loading")} />;
   if (error)
     return (
-      <ErrorMessage message={error?.response?.data?.message || error.message} />
+      <ErrorMessage 
+        // @ts-ignore
+        message={error?.response?.data?.message || error.message} />
     );
   function handleSearch({ searchText }: { searchText: string }) {
     setSearchTerm(searchText);

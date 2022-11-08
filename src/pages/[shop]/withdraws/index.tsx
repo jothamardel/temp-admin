@@ -55,13 +55,15 @@ export default function WithdrawsPage() {
             {t("common:sidebar-nav-item-withdraws")}
           </h1>
         </div>
-
-        <LinkButton
-          href={`/${shop}/withdraws/create`}
-          className="h-12 w-full md:w-auto md:ms-auto"
-        >
-          <span>+ {t("form:button-label-add-withdraw")}</span>
-        </LinkButton>
+        {
+          // @ts-ignore
+          <LinkButton
+            href={`/${shop}/withdraws/create`}
+            className="h-12 w-full md:w-auto md:ms-auto"
+          >
+            <span>+ {t("form:button-label-add-withdraw")}</span>
+          </LinkButton>
+        }
       </Card>
 
       <WithdrawList

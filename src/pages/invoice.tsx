@@ -9,8 +9,12 @@ const InvoicePage = () => {
   if (loading) return <Loader showText={false} />;
   if (error) return <ErrorMessage message={error.message} />;
   return (
+    // @ts-ignore
     <PDFViewer style={{ width: "100vw", height: "100vh" }}>
-      <InvoicePdf order={data?.order!} />
+      {
+        // @ts-ignore
+        <InvoicePdf order={data?.order!} />
+      }
     </PDFViewer>
   );
 };

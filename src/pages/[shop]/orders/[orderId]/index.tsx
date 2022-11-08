@@ -141,26 +141,30 @@ export default function OrderDetailsPage() {
       <div className="flex w-full">
         <Button size="small" className="ms-auto mb-5">
           <DownloadIcon className="h-4 w-4 me-3" />
-          <PDFDownloadLink
-            document={
-              <InvoicePdf
-                subtotal={subtotal}
-                total={total}
-                discount={discount}
-                delivery_fee={delivery_fee}
-                sales_tax={sales_tax}
-                settings={settings}
-                order={data?.order}
-              />
-            }
-            fileName="invoice.pdf"
-          >
-            {({ loading }: any) =>
-              loading
-                ? t("common:text-loading")
-                : `${t("common:text-download")} ${t("common:text-invoice")}`
-            }
-          </PDFDownloadLink>
+          {
+            // @ts-ignore
+            <PDFDownloadLink
+              document={
+                <InvoicePdf
+                  subtotal={subtotal}
+                  total={total}
+                  discount={discount}
+                  delivery_fee={delivery_fee}
+                  sales_tax={sales_tax}
+                  settings={settings}
+                  // @ts-ignore
+                  order={data?.order}
+                />
+              }
+              fileName="invoice.pdf"
+            >
+              {({ loading }: any) =>
+                loading
+                  ? t("common:text-loading")
+                  : `${t("common:text-download")} ${t("common:text-invoice")}`
+              }
+            </PDFDownloadLink>
+          }
         </Button>
       </div>
 
@@ -186,7 +190,9 @@ export default function OrderDetailsPage() {
               }}
             />
 
-            <ValidationError message={t(errors?.order_status?.message)} />
+            <ValidationError 
+            // @ts-ignore
+            message={t(errors?.order_status?.message)} />
           </div>
           <Button loading={updating}>
             <span className="hidden sm:block">

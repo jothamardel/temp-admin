@@ -126,7 +126,8 @@ export default function CreateOrUpdateTagForm({ initialValues }: IProps) {
         updateTag({
           variables: {
             id: initialValues?.id!,
-            input: {
+            // @ts-ignore
+            input: { 
               ...input,
             },
           },

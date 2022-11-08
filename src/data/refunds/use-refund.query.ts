@@ -1,6 +1,6 @@
 import Refunds from "@repositories/refunds";
 import { useQuery } from "react-query";
-import { Order as TOrder } from "@ts-types/generated";
+// import { Order as TOrder } from "@ts-types/generated";
 import { API_ENDPOINTS } from "@utils/api/endpoints";
 
 export const fetchRefund = async (id: string) => {

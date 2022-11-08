@@ -1,4 +1,4 @@
-import { UpdateTag } from "@ts-types/generated";
+import { UpdateTagInput } from "@ts-types/generated";
 import { useMutation, useQueryClient } from "react-query";
 import { toast } from "react-toastify";
 import Tag from "@repositories/tag";
@@ -7,7 +7,7 @@ import { useTranslation } from "next-i18next";
 export interface ITagUpdateVariables {
   variables: {
     id: string;
-    input: UpdateTag;
+    input: UpdateTagInput;
   };
 }
 

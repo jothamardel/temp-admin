@@ -59,14 +59,17 @@ export default function AttributePage() {
         </div>
 
         <div className="flex flex-col md:flex-row items-center w-full md:w-3/4 xl:w-2/4 ms-auto">
-          <LinkButton
-            href={`/${shop}/attributes/create`}
-            className="h-12 mt-5 md:mt-0 md:ms-auto w-full md:w-auto"
-          >
-            <span>
-              + {t("form:button-label-add")} {t("common:attribute")}
-            </span>
-          </LinkButton>
+          {
+            // @ts-ignore
+            <LinkButton
+              href={`/${shop}/attributes/create`}
+              className="h-12 mt-5 md:mt-0 md:ms-auto w-full md:w-auto"
+            >
+              <span>
+                + {t("form:button-label-add")} {t("common:attribute")}
+              </span>
+            </LinkButton>
+          }
 
           <Button onClick={handleImportModal} className="mt-5 w-full md:hidden">
             {t("common:text-export-import")}

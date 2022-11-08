@@ -51,7 +51,9 @@ export default function Coupons() {
 
         <div className="w-full xl:w-1/2 flex flex-col md:flex-row space-y-4 md:space-y-0 items-center ms-auto">
           <Search onSearch={handleSearch} />
-
+          {
+            
+          }
           <LinkButton
             href="/coupons/create"
             className="h-12 md:ms-6 w-full md:w-auto"

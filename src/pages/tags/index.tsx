@@ -11,9 +11,9 @@ import TagList from "@components/tag/tag-list";
 import { adminOnly } from "@utils/auth-utils";
 import { useTagsQuery } from "@data/tag/use-tags.query";
 import { SortOrder } from "@ts-types/generated";
-import { OrderField } from "@ts-types/index";
+// import { OrderField } from "@ts-types/index";
 import { ROUTES } from "@utils/routes";
-import SortForm from "@components/common/sort-form";
+// import SortForm from "@components/common/sort-form";
 
 export default function Tags() {
   const { t } = useTranslation();

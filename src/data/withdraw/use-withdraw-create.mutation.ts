@@ -1,10 +1,10 @@
 import { CreateWithdrawInput } from "@ts-types/generated";
-import { ROUTES } from "@utils/routes";
+// import { ROUTES } from "@utils/routes";
 import Withdraw from "@repositories/withdraw";
 import { useRouter } from "next/router";
 import { useMutation, useQueryClient } from "react-query";
 import { API_ENDPOINTS } from "@utils/api/endpoints";
-import { animatedScrollTo } from "react-select/src/utils";
+// import { animatedScrollTo } from "react-select/src/utils";
 
 export interface IWithdrawCreateVariables {
   variables: {

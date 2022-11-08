@@ -1,6 +1,8 @@
 import { QueryParamsType, ShopsQueryOptionsType } from "@ts-types/custom.types";
+// @ts-ignore
 import { mapPaginatorData, stringifySearchQuery } from "@utils/data-mappers";
 import { useQuery } from "react-query";
+// @ts-ignore
 import Shop from "@repositories/shop";
 import { API_ENDPOINTS } from "@utils/api/endpoints";
 import { ShopPaginator } from "@ts-types/generated";
@@ -11,16 +13,16 @@ const fetchShops = async ({
   const [_key, params] = queryKey;
 
   const {
-    page,
-    text,
-    limit = 15,
-    orderBy = "updated_at",
-    sortedBy = "DESC",
+    // page,
+    // text,
+    // limit = 15,
+    // orderBy = "updated_at",
+    // sortedBy = "DESC",
   } = params as ShopsQueryOptionsType;
 
-  const searchString = stringifySearchQuery({
-    name: text,
-  });
+  // const searchString = stringifySearchQuery({
+  //   name: text,
+  // });
   const url = `${API_ENDPOINTS.SHOP}`;
   const {
     data: { data, ...rest },

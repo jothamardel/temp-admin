@@ -16,6 +16,7 @@ const http = axios.create({
 // Change request data/error here
 http.interceptors.request.use(
   (config) => {
+    // @ts-ignore
     const { token } = getAuthCredentials();
     config.headers = {
       ...config.headers,

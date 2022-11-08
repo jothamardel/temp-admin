@@ -12,7 +12,7 @@ import { useShopQuery } from "@data/shop/use-shop.query";
 import { useStaffsQuery } from "@data/shop/use-staffs.query";
 import { useState } from "react";
 import { SortOrder } from "@ts-types/generated";
-import SortForm from "@components/common/sort-form";
+// import SortForm from "@components/common/sort-form";
 
 export default function StaffsPage() {
   const {
@@ -47,7 +47,9 @@ export default function StaffsPage() {
     return <Loader text={t("common:text-loading")} />;
   if (error)
     return (
-      <ErrorMessage message={error?.response?.data?.message || error.message} />
+      <ErrorMessage 
+        // @ts-ignore
+        message={error?.response?.data?.message || error.message} />
     );
 
   function handlePagination(current: any) {
@@ -63,9 +65,12 @@ export default function StaffsPage() {
         </div>
 
         <div className="flex items-center w-3/4 xl:w-2/4 ms-auto">
-          <LinkButton href={`/${shop}/staffs/create`} className="h-12 ms-auto">
-            <span>+ {t("form:button-label-add-staff")}</span>
-          </LinkButton>
+          {
+            // @ts-ignore
+            <LinkButton href={`/${shop}/staffs/create`} className="h-12 ms-auto">
+              <span>+ {t("form:button-label-add-staff")}</span>
+            </LinkButton>
+          }
         </div>
       </Card>
 

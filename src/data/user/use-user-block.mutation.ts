@@ -1,15 +1,16 @@
+// @ts-ignore
 import { useMutation, useQueryClient } from "react-query";
 import {ErrorResponse } from "@ts-types/generated";
-import User from "@repositories/user";
-import { API_ENDPOINTS } from "@utils/api/endpoints";
+// import User from "@repositories/user";
+// import { API_ENDPOINTS } from "@utils/api/endpoints";
 import axios from "axios";
-import { useState } from "react";
+// import { useState } from "react";
 import { getAuthCredentials } from "@utils/auth-utils";
 import { toast } from "react-toastify";
 import { useTranslation } from "next-i18next";
 
 export const useBlockUserMutation = () => {
-  const queryClient = useQueryClient();
+  // const queryClient = useQueryClient();
   const { t } = useTranslation();
   const { token } = getAuthCredentials();
   

@@ -1,7 +1,7 @@
 import { CreateTypeInput, ErrorResponse } from "@ts-types/generated";
-import { ROUTES } from "@utils/routes";
-import Type from "@repositories/type";
-import { useRouter } from "next/router";
+// import { ROUTES } from "@utils/routes";
+// import Type from "@repositories/type";
+// import { useRouter } from "next/router";
 import { useMutation, useQueryClient } from "react-query";
 import { API_ENDPOINTS } from "@utils/api/endpoints";
 import axios from "axios";
@@ -17,7 +17,7 @@ export interface ITypeCreateVariables {
 
 export const useCreateTypeMutation = () => {
   const queryClient = useQueryClient();
-  const router = useRouter();
+  // const router = useRouter();
   const { token } = getAuthCredentials();
 
   return useMutation(

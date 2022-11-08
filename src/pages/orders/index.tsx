@@ -15,7 +15,9 @@ export default function Orders() {
   const [searchTerm, setSearchTerm] = useState("");
   const [page, setPage] = useState(1);
   const { t } = useTranslation();
+  // @ts-ignore
   const [orderBy, setOrder] = useState("created_at");
+  // @ts-ignore
   const [sortedBy, setColumn] = useState<SortOrder>(SortOrder.Desc);
 
   const {

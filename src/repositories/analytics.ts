@@ -11,6 +11,7 @@ class Analytics {
         throw new Error();
       } catch (error) {
         return {
+          // @ts-ignore
           error: error.response || error.message,
         };
       }

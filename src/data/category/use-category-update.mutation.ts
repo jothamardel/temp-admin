@@ -1,7 +1,7 @@
 import { ErrorResponse, UpdateCategory } from "@ts-types/generated";
 import { useMutation, useQueryClient } from "react-query";
 import { toast } from "react-toastify";
-import Category from "@repositories/category";
+// import Category from "@repositories/category";
 import { API_ENDPOINTS } from "@utils/api/endpoints";
 import { useTranslation } from "next-i18next";
 import axios from "axios";

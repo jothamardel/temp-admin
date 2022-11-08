@@ -2,6 +2,7 @@ import {
   QueryParamsType,
   StaffsQueryOptionsType,
 } from "@ts-types/custom.types";
+// @ts-ignore
 import { mapPaginatorData, stringifySearchQuery } from "@utils/data-mappers";
 import { useQuery } from "react-query";
 import Shop from "@repositories/shop";

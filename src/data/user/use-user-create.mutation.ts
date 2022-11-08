@@ -1,6 +1,6 @@
 import { RegisterInput, ErrorResponse } from "@ts-types/generated";
 import { ROUTES } from "@utils/routes";
-import User from "@repositories/user";
+// import User from "@repositories/user";
 import { useRouter } from "next/router";
 import { useMutation, useQueryClient } from "react-query";
 import { API_ENDPOINTS } from "@utils/api/endpoints";

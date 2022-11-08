@@ -22,6 +22,8 @@ export interface ButtonProps {
   active?: boolean;
   type?: "submit" | "reset" | "button";
   disabled?: boolean;
+  children: any;
+  href: string;
 }
 
 const LinkButton: React.FC<NextLinkProps & ButtonProps> = ({

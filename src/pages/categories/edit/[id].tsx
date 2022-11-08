@@ -12,7 +12,7 @@ export default function UpdateCategoriesPage() {
   const { query } = useRouter();
   const { t } = useTranslation();
   const {
-    data: oldData,
+    // data: oldData,
     isLoading: loading,
     error,
   } = useCategoryQuery(query.id as string);

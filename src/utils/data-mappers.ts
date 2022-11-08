@@ -10,6 +10,7 @@ export const mapPaginatorData = (obj: PaginatorInfoType): PaginatorInfo => {
   const formattedValues = camelcaseKeys(obj);
   return {
     ...(formattedValues as PaginatorInfo),
+    // @ts-ignore
     hasMorePages: formattedValues?.lastPage !== formattedValues?.currentPage,
   };
 };

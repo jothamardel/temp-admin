@@ -5,7 +5,7 @@ import Loader from "@components/ui/loader/loader";
 import AccessDeniedPage from "@components/common/access-denied";
 import { ROUTES } from "./routes";
 
-const PrivateRoute: React.FC<{ authProps: any }> = ({
+const PrivateRoute: React.FC<{ authProps: any; children: any; }> = ({
   children,
   authProps,
 }) => {
