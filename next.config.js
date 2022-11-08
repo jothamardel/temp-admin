@@ -7,7 +7,7 @@ module.exports = withPWA({
   //   esmExternals: false,
     
   // },
-  i18n,
+  // i18n,
   pwa: {
     disable: process.env.NODE_ENV === "development",
     dest: "public",
