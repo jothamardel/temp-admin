@@ -7,6 +7,7 @@ import PasswordInput from "@components/ui/password-input";
 import { useChangePasswordMutation } from "@data/user/use-change-password.mutation";
 import { useTranslation } from "next-i18next";
 import { yupResolver } from "@hookform/resolvers/yup";
+// import {yupResolver} from '@hookform/resolvers/yup/dist/yup';
 import * as yup from "yup";
 
 interface FormValues {

@@ -9,6 +9,7 @@ import { ShippingInput, ShippingType, Shipping } from "@ts-types/generated";
 import { useCreateShippingClassMutation } from "@data/shipping/use-shipping-create.mutation";
 import { useUpdateShippingClassMutation } from "@data/shipping/use-shipping-update.mutation";
 import { yupResolver } from "@hookform/resolvers/yup";
+// import {yupResolver} from '@hookform/resolvers/yup/dist/yup';
 import { shippingValidationSchema } from "./shipping-validation-schema";
 import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";

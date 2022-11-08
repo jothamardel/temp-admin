@@ -26,6 +26,7 @@ import { useTranslation } from "next-i18next";
 import FileInput from "@components/ui/file-input";
 import SelectInput from "@components/ui/select-input";
 import { yupResolver } from "@hookform/resolvers/yup";
+// import {yupResolver} from '@hookform/resolvers/yup/dist/yup';
 import { categoryValidationSchema } from "./category-validation-schema";
 
 export const updatedIcons = categoryIcons.map((item: any) => {

@@ -1,4 +1,5 @@
 import { yupResolver } from "@hookform/resolvers/yup";
+// import {yupResolver} from '@hookform/resolvers/yup/dist/yup';
 import { useForm, UseFormReturn, SubmitHandler } from "react-hook-form";
 
 type FormProps<TFormValues> = {

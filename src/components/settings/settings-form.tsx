@@ -17,6 +17,7 @@ import ValidationError from "@components/ui/form-validation-error";
 import { useUpdateSettingsMutation } from "@data/settings/use-settings-update.mutation";
 import { useTranslation } from "next-i18next";
 import { yupResolver } from "@hookform/resolvers/yup";
+// import {yupResolver} from '@hookform/resolvers/yup/dist/yup';
 import { settingsValidationSchema } from "./settings-validation-schema";
 import FileInput from "@components/ui/file-input";
 import SelectInput from "@components/ui/select-input";

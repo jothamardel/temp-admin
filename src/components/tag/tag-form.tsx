@@ -15,6 +15,7 @@ import { useTranslation } from "next-i18next";
 import FileInput from "@components/ui/file-input";
 import SelectInput from "@components/ui/select-input";
 import { yupResolver } from "@hookform/resolvers/yup";
+// import {yupResolver} from '@hookform/resolvers/yup/dist/yup';
 import { tagValidationSchema } from "./tag-validation-schema";
 import { useTypesQuery } from "@data/type/use-types.query";
 import { useCreateTagMutation } from "@data/tag/use-tag-create.mutation";

@@ -3,6 +3,7 @@ import Input from "@components/ui/input";
 import { Controller, useFieldArray, useForm } from "react-hook-form";
 import { useTranslation } from "next-i18next";
 import { yupResolver } from "@hookform/resolvers/yup";
+// import {yupResolver} from '@hookform/resolvers/yup/dist/yup';
 import Description from "@components/ui/description";
 import Card from "@components/common/card";
 import FileInput from "@components/ui/file-input";

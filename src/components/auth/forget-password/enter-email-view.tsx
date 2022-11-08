@@ -2,6 +2,7 @@ import Button from "@components/ui/button";
 import Input from "@components/ui/input";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
+// import {yupResolver} from '@hookform/resolvers/yup/dist/yup';
 import * as yup from "yup";
 import { useTranslation } from "next-i18next";
 interface Props {
@@ -22,6 +23,7 @@ const EnterEmailView = ({ onSubmit, loading }: Props) => {
     handleSubmit,
 
     formState: { errors },
+    // @ts-ignore
   } = useForm<{ email: string }>({ resolver: yupResolver(schema) });
 
   return (

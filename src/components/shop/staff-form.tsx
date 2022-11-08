@@ -7,6 +7,7 @@ import Description from "@components/ui/description";
 import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
 import { yupResolver } from "@hookform/resolvers/yup";
+// import {yupResolver} from '@hookform/resolvers/yup/dist/yup';
 import * as yup from "yup";
 import { useShopQuery } from "@data/shop/use-shop.query";
 import { useAddStaffMutation } from "@data/user/use-add-staff.mutation";

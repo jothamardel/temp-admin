@@ -9,6 +9,7 @@ import { useCreateOrderStatusMutation } from "@data/order-status/product-create.
 import { useUpdateOrderStatusMutation } from "@data/order-status/product-update.mutation";
 import { useTranslation } from "next-i18next";
 import { yupResolver } from "@hookform/resolvers/yup";
+// import {yupResolver} from '@hookform/resolvers/yup/dist/yup';
 import { orderStatusValidationSchema } from "./order-status-validation-schema";
 import DisplayColorCode from "@components/ui/color-picker/display-color-code";
 

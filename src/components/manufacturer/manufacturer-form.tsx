@@ -12,6 +12,7 @@ import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
 import FileInput from "@components/ui/file-input";
 import { yupResolver } from "@hookform/resolvers/yup";
+// import {yupResolver} from '@hookform/resolvers/yup/dist/yup';
 import { manufacturerValidationSchema } from "./manufacturer-validation-schema";
 import { getIcon } from "@utils/get-icon";
 import SelectInput from "@components/ui/select-input";

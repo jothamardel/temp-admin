@@ -1,19 +1,19 @@
-const withPWA = require("next-pwa");
+const withPWA = require("next-pwa")({
+  dest: "public"
+});
 const runtimeCaching = require("next-pwa/cache");
 const { i18n } = require("./next-i18next.config");
 
 module.exports = withPWA({
-  // experimental: {
-  //   esmExternals: false,
-    
-  // },
-  // i18n,
-  // pwa: {
-  disable: process.env.NODE_ENV === "development",
-  dest: "public",
-  runtimeCaching,
-  // },
-
+  experimental: {
+    esmExternals: false,
+  },
+  i18n,
+  pwa: {
+    disable: process.env.NODE_ENV === "development",
+    dest: "public",
+    runtimeCaching,
+  },
   images: {
     domains: [
       "via.placeholder.com",

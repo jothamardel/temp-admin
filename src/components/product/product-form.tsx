@@ -8,6 +8,7 @@ import Label from "@components/ui/label";
 import Radio from "@components/ui/radio/radio";
 import { useRouter } from "next/router";
 import { yupResolver } from "@hookform/resolvers/yup";
+// import {yupResolver} from '@hookform/resolvers/yup/dist/yup';
 import FileInput from "@components/ui/file-input";
 import { productValidationSchema } from "./product-validation-schema";
 // import groupBy from "lodash/groupBy";

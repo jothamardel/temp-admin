@@ -15,6 +15,7 @@ import { useUpdateCouponMutation } from "@data/coupon/use-coupon-update.mutation
 import { useTranslation } from "next-i18next";
 import FileInput from "@components/ui/file-input";
 import { yupResolver } from "@hookform/resolvers/yup";
+// import {yupResolver} from '@hookform/resolvers/yup/dist/yup';
 import { couponValidationSchema } from "./coupon-validation-schema";
 
 type FormValues = {
