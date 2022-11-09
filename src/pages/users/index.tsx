@@ -83,7 +83,7 @@ export default function Customers() {
         </div>
       </Card>
 
-      {loading ? null : (
+      {/* {loading ? null : (
         <CustomerList
           customers={data?.users}
           searchTerm={searchTerm}
@@ -91,7 +91,7 @@ export default function Customers() {
           onOrder={setOrder}
           onSort={setColumn}
         />
-      )}
+      )} */}
     </>
   );
 }
