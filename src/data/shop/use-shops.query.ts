@@ -23,13 +23,15 @@ const fetchShops = async ({
   // const searchString = stringifySearchQuery({
   //   name: text,
   // });
-  const url = `${API_ENDPOINTS.SHOP}`;
+  const url = `${API_ENDPOINTS.PSHOPS}`;
   const {
-    data: { data, ...rest },
+    data: { shops, ...rest },
   } = await Shop.all(url);
+  // console.log(shops, {...rest})
   return {
     shops: {
-      data,
+      // @ts-ignore
+      data: shops,
       paginatorInfo: mapPaginatorData({ ...rest }),
     },
   };
@@ -37,7 +39,7 @@ const fetchShops = async ({
 
 const useShopsQuery = (options: ShopsQueryOptionsType) => {
   return useQuery<{ shops: ShopPaginator }, Error>(
-    [API_ENDPOINTS.SHOP, options],
+    [API_ENDPOINTS.PSHOPS, options],
     fetchShops,
     {
       keepPreviousData: true,

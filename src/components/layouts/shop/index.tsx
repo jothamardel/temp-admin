@@ -14,6 +14,8 @@ const ShopLayout: React.FC = ({ children }) => {
     query: { shop },
   } = useRouter();
 
+  console.log("Shops: ", shop)
+
   const { permissions: currentUserPermissions } = getAuthCredentials();
 
   const SidebarItemMap = () => (

@@ -10,10 +10,13 @@ import FileInput from "@components/ui/file-input";
 import pick from "lodash/pick";
 
 type FormValues = {
-  name: string;
+  fullname: string;
+  description:  string;
+  phone: string;
+  email: string;
   profile: {
     id: string;
-    bio: string;
+    // bio: string;
     contact: string;
     avatar: {
       thumbnail: string;
@@ -34,21 +37,24 @@ export default function ProfileUpdate({ me }: any) {
   } = useForm<FormValues>({
     defaultValues: {
       ...(me &&
-        pick(me, ["name", "profile.bio", "profile.contact", "profile.avatar"])),
+        pick(me[0], ["fullname", "description", "phone", "email"])),
     },
   });
 
   async function onSubmit(values: FormValues) {
-    const { name, profile } = values;
+    const { fullname, profile, description, phone, email } = values;
     updateUser({
       variables: {
         id: me?.id,
         input: {
-          name: name,
+          fullname,
+          description,
+          phone,
+          email,
           profile: {
             id: me?.profile?.id,
-            bio: profile?.bio,
-            contact: profile?.contact,
+            // bio: profile?.bio,
+            // contact: profile?.contact,
             avatar: {
               thumbnail: profile?.avatar?.thumbnail,
               original: profile?.avatar?.original,
@@ -59,6 +65,9 @@ export default function ProfileUpdate({ me }: any) {
       },
     });
   }
+
+
+ 
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
@@ -84,26 +93,38 @@ export default function ProfileUpdate({ me }: any) {
         <Card className="w-full sm:w-8/12 md:w-2/3 mb-5">
           <Input
             label={t("form:input-label-name")}
-            {...register("name")}
-            error={t(errors.name?.message!)}
+            {...register("fullname")}
+            error={t(errors.fullname?.message!)}
             variant="outline"
             className="mb-5"
+            value={me[0]?.fullname}
           />
           <TextArea
             label={t("form:input-label-bio")}
-            {...register("profile.bio")}
-            error={t(errors.profile?.bio?.message!)}
+            {...register("description")}
+            error={t(errors.description?.message!)}
             variant="outline"
             className="mb-6"
+            value={me[0]?.description}
+          />
+          <Input
+            label={t("form:input-label-email")}
+            {...register("email")}
+            error={t(errors.email?.message!)}
+            variant="outline"
+            className="mb-5"
+            value={me[0]?.email}
           />
           <Input
             label={t("form:input-label-contact")}
-            {...register("profile.contact")}
-            error={t(errors.profile?.contact?.message!)}
+            {...register("phone")}
+            error={t(errors.phone?.message!)}
             variant="outline"
             className="mb-5"
+            value={me[0]?.phone}
           />
         </Card>
+    
 
         <div className="w-full text-end">
           <Button loading={loading} disabled={loading}>

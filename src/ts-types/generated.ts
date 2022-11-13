@@ -793,7 +793,10 @@ export enum Permission {
 }
 
 export type UpdateUser = {
-  name?: Maybe<Scalars["String"]>;
+  fullname?: Maybe<Scalars["String"]>;
+  description?: Maybe<Scalars["String"]>;
+  phone?: Maybe<Scalars["String"]>;
+  email?: Maybe<Scalars["String"]>;
   profile?: Maybe<UserProfileInput>;
   address?: Maybe<Array<Maybe<UserAddressUpsertInput>>>;
 };

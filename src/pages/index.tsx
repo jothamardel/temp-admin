@@ -19,7 +19,7 @@ export default function Dashboard({
 }: {
   userPermissions: string[];
 }) {
-  console.log("Browser permissions: ", userPermissions);
+  // console.log("Browser permissions: ", userPermissions);
   if (userPermissions?.includes(ADMIN)) {
     // @ts-ignore
     return <AdminDashboard />;

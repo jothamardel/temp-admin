@@ -64,6 +64,7 @@ const ShopList = ({ shops, onPagination, onSort, onOrder }: IProps) => {
         />
       ),
     },
+  
     {
       title: (
         <TitleWithSort
@@ -90,7 +91,7 @@ const ShopList = ({ shops, onPagination, onSort, onOrder }: IProps) => {
       dataIndex: "owner",
       key: "owner",
       align: "center",
-      render: (owner: any) => owner.name,
+      render: (owner: any) => owner[0].fullname,
     },
     {
       title: (
@@ -166,6 +167,9 @@ const ShopList = ({ shops, onPagination, onSort, onOrder }: IProps) => {
       },
     },
   ];
+
+
+  console.log(data)
 
   return (
     <>

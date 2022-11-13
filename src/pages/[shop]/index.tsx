@@ -37,7 +37,7 @@ export default function ShopPage() {
     query: { shop },
     locale,
   } = useRouter();
-  const { data, isLoading: loading, error } = useShopQuery(shop!.toString());
+  const { data, isLoading: loading, error } = useShopQuery("?is_service=true");
   const { price: totalEarnings } = usePrice(
     data && {
       amount: data?.shop?.balance?.total_earnings!,
@@ -60,10 +60,14 @@ export default function ShopPage() {
     orders_count,
     balance,
     address,
-    created_at,
+    createdAt,
     settings,
     slug,
+    owner
   } = data?.shop! ?? {};
+
+
+  console.log(data)
 
   return (
     <div className="grid grid-cols-12 gap-6">
@@ -266,7 +270,7 @@ export default function ShopPage() {
             {t("common:text-registered-since")}
           </span>
           <span className="text-sm font-semibold text-sub-heading">
-            {dayjs(created_at).format("MMMM D, YYYY")}
+            {dayjs(createdAt).format("MMMM D, YYYY")}
           </span>
         </div>
 
@@ -281,7 +285,8 @@ export default function ShopPage() {
                 {t("common:text-name")}:
               </span>{" "}
               <span className="font-semibold">
-                {balance?.payment_info?.name}
+                {/* {balance?.payment_info?.name} */}
+                {owner[0].fullname}
               </span>
             </p>
             <p className="text-sm text-sub-heading">
@@ -289,7 +294,8 @@ export default function ShopPage() {
                 {t("common:text-email")}:
               </span>{" "}
               <span className="font-semibold">
-                {balance?.payment_info?.email}
+                {/* {balance?.payment_info?.email} */}
+                {owner[0].email}
               </span>
             </p>
             <p className="text-sm text-sub-heading">

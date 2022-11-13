@@ -4,8 +4,11 @@ import { Shop as TShop } from "@ts-types/generated";
 import { API_ENDPOINTS } from "@utils/api/endpoints";
 
 export const fetchShop = async (slug: string) => {
+  console.log(`${API_ENDPOINTS.SHOPS}/${slug}`)
   const { data } = await Shop.find(`${API_ENDPOINTS.SHOPS}/${slug}`);
-  return { shop: data };
+  console.log("Data: ", data)
+  let shop = data?.shops[0];
+  return { shop };
 };
 
 type IProps = {

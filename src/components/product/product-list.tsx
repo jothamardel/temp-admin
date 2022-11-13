@@ -234,7 +234,7 @@ const ProductList = ({ products, onPagination, onSort, onOrder }: IProps) => {
         />
       </div>
 
-      {!!paginatorInfo.total && (
+      {/* {!!paginatorInfo.total && (
         <div className="flex justify-end items-center">
           <Pagination
             total={paginatorInfo.total}
@@ -244,7 +244,7 @@ const ProductList = ({ products, onPagination, onSort, onOrder }: IProps) => {
             showLessItems
           />
         </div>
-      )}
+      )} */}
     </>
   );
 };

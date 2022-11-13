@@ -3,7 +3,8 @@ import { SUPER_ADMIN, ADMIN } from "@utils/constants";
 import dynamic from "next/dynamic";
 
 const AdminLayout = dynamic(() => import("@components/layouts/admin"));
-const OwnerLayout = dynamic(() => import("@components/layouts/owner"));
+// const OwnerLayout = dynamic(() => import("@components/layouts/owner"));
+const ShopLayout = dynamic(() => import("@components/layouts/shop"));
 
 export default function AppLayout({
   userPermissions,
@@ -16,5 +17,5 @@ export default function AppLayout({
     return <AdminLayout {...props} />;
   }
   // @ts-ignore
-  return <OwnerLayout {...props} />;
+  return <ShopLayout {...props} />;
 }

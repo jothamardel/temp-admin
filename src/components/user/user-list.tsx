@@ -1,4 +1,4 @@
-import Pagination from "@components/ui/pagination";
+// import Pagination from "@components/ui/pagination";
 import Image from "next/image";
 import { Table } from "@components/ui/table";
 import ActionButtons from "@components/common/action-buttons";
@@ -17,7 +17,9 @@ type IProps = {
   onOrder: (current: string) => void;
   searchTerm: string;
 };
+// @ts-ignore
 const CustomerList = ({ customers, onPagination, onSort, onOrder, searchTerm }: IProps) => {
+  // @ts-ignore
   const {  paginatorInfo, newData } = customers!;
   const { t } = useTranslation();
   const { alignLeft } = useIsRTL();
@@ -138,6 +140,7 @@ const CustomerList = ({ customers, onPagination, onSort, onOrder, searchTerm }: 
     },
   ];
 
+  // @ts-ignore
   function filterUsers(arr:[]) {
     const newArr = [...arr];
     const filteredResult:Array<{}> = newArr.filter((item: { fullname: string; email: string; username: string;}) => (
@@ -151,17 +154,20 @@ const CustomerList = ({ customers, onPagination, onSort, onOrder, searchTerm }: 
   return (
     <>
       <div className="rounded overflow-hidden shadow mb-6">
-        <Table
-          // @ts-ignore
-          columns={columns}
-          emptyText={t("table:empty-table-data")}
-          data={filterUsers(newData.users)}
-          rowKey="id"
-          scroll={{ x: 800 }}
-        />
+        {/* {
+          newData?.users?.length > 0 &&
+          <Table
+            // @ts-ignore
+            columns={columns}
+            emptyText={t("table:empty-table-data")}
+            data={filterUsers(newData.users)}
+            rowKey="id"
+            scroll={{ x: 800 }}
+          />
+        } */}
       </div>
 
-      {!!paginatorInfo.total && (
+      {/* {!!paginatorInfo.total && (
         <div className="flex justify-end items-center">
           <Pagination
             total={paginatorInfo.total}
@@ -170,7 +176,7 @@ const CustomerList = ({ customers, onPagination, onSort, onOrder, searchTerm }: 
             onChange={onPagination}
           />
         </div>
-      )}
+      )} */}
     </>
   );
 };

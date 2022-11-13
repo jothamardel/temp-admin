@@ -27,7 +27,8 @@ module.exports = withPWA({
       "pickbazarlaravel.s3.ap-southeast-1.amazonaws.com",
       "lh3.googleusercontent.com",
       "raw.githubusercontent.com",
-      "votemania-b2.s3.us-west-002.backblazeb2.com"
+      "votemania-b2.s3.us-west-002.backblazeb2.com",
+      "www.pngfind.com"
     ],
   },
   typescript: {

@@ -1,3 +1,4 @@
+import React from 'react';
 import Card from "@components/common/card";
 import Layout from "@components/layouts/admin";
 // import Search from "@components/common/search";
@@ -50,48 +51,52 @@ export default function Customers() {
 
   return (
     <>
-      <Card className="flex flex-col md:flex-row items-center mb-8">
-        <div className="md:w-1/4 mb-4 md:mb-0">
-          <h1 className="text-lg font-semibold text-heading">
-            {t("form:input-label-customers")}
-          </h1>
-        </div>
-        
-
-        <div className="w-full md:w-3/4 flex items-center ms-auto">
-         
-          {/* <Search 
-            onSearch={handleSearch} 
-          /> */}
-          <div className="w-full flex items-center rounded relative border border-border-base focus:border-accent">
-            <input
-              type="search"
-              id="search"
-              className="ps-10 pe-4 h-12 flex items-center w-full rounded appearance-none transition duration-300 ease-in-out text-heading text-sm focus:outline-none focus:ring-0"
-              placeholder={t("search")}
-              aria-label="Search"
-              autoComplete="off"
-              onChange={e => setSearchTerm(e.target.value)}
-            />
+     
+        <Card className="flex flex-col md:flex-row items-center mb-8">
+          <div className="md:w-1/4 mb-4 md:mb-0">
+            <h1 className="text-lg font-semibold text-heading">
+              {t("form:input-label-customers")}
+            </h1>
           </div>
-          <LinkButton
-            href={`${ROUTES.USERS}/create`}
-            className="h-12 ms-4 md:ms-6"
-          >
-            <span onClick={closeModal}>+ {t("form:button-label-add-customer")}</span>
-          </LinkButton>
-        </div>
-      </Card>
+          
 
-      {/* {loading ? null : (
-        <CustomerList
-          customers={data?.users}
-          searchTerm={searchTerm}
-          onPagination={handlePagination}
-          onOrder={setOrder}
-          onSort={setColumn}
-        />
-      )} */}
+          <div className="w-full md:w-3/4 flex items-center ms-auto">
+          
+            {/* <Search 
+              onSearch={handleSearch} 
+            /> */}
+            <div className="w-full flex items-center rounded relative border border-border-base focus:border-accent">
+              <input
+                type="search"
+                id="search"
+                className="ps-10 pe-4 h-12 flex items-center w-full rounded appearance-none transition duration-300 ease-in-out text-heading text-sm focus:outline-none focus:ring-0"
+                placeholder={t("search")}
+                aria-label="Search"
+                autoComplete="off"
+                onChange={e => setSearchTerm(e.target.value)}
+              />
+            </div>
+            <LinkButton
+              href={`${ROUTES.USERS}/create`}
+              className="h-12 ms-4 md:ms-6"
+            >
+              <span onClick={closeModal}>+ {t("form:button-label-add-customer")}</span>
+            </LinkButton>
+          </div>
+        </Card>
+        <UserErrorBoundary>
+        {loading ? null : (
+          <CustomerList
+          // @ts-ignore
+            // customers={[]}
+            customers={data?.users}
+            searchTerm={searchTerm}
+            onPagination={handlePagination}
+            onOrder={setOrder}
+            onSort={setColumn}
+          />
+        )}
+      </UserErrorBoundary>
     </>
   );
 }
@@ -106,3 +111,43 @@ export const getStaticProps = async ({ locale }: any) => ({
     ...(await serverSideTranslations(locale, ["table", "common", "form"])),
   },
 });
+
+
+
+// @ts-ignore
+class UserErrorBoundary extends React.Component{
+  // @ts-ignore
+  constructor(props) {
+    super(props);
+    this.state = {
+      hasError: false
+    }
+  }
+
+  // @ts-ignore
+  componentDidCatch(error, errorInfo) {
+    // You can also log the error to an error reporting service
+    console.log(error, errorInfo);
+    this.setState({ hasError: true, errorInfo})
+  }
+
+
+  render() {
+    return <>
+        { 
+          // @ts-ignore
+          this.state.hasError && 
+          <div className="w-ful min-h-screen flex justify-center items-center">
+            {
+              // @ts-ignore
+              <h1>Something went wrong {this.state.errorInfo}</h1>
+            }
+          </div>
+        }
+        {
+          // @ts-ignore
+          !this.state.hasError && this.props.children
+        }
+    </>
+  }
+}
