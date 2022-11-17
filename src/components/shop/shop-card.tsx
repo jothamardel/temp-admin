@@ -12,6 +12,8 @@ const ShopCard: React.FC<ShopCardProps> = ({ shop }) => {
 
   const isNew = false;
 
+  console.log(shop)
+
   return (
     <Link href={`/${shop?.slug}`}>
       <div className="flex items-center p-5 bg-light border border-gray-200 rounded cursor-pointer relative">

@@ -140,6 +140,12 @@ export const siteSettings = {
         permissions: adminOwnerAndStaffOnly,
       },
       {
+        href: (shop: string) => `/${shop}${ROUTES.ALLSHOPS}`,
+        label: "sidebar-nav-item-shops",
+        icon: "ShopIcon",
+        permissions: adminOwnerAndStaffOnly,
+      },
+      {
         href: (shop: string) => `/${shop}${ROUTES.ATTRIBUTES}`,
         label: "sidebar-nav-item-attributes",
         icon: "AttributeIcon",

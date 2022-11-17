@@ -30,4 +30,5 @@ export const ROUTES = {
   AUTHORS: "/authors",
   MANUFACTURERS: "/manufacturers",
   CHECKOUT: "/orders/checkout",
+  ALLSHOPS: "/all"
 };
