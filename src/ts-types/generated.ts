@@ -458,6 +458,11 @@ export enum ShippingType {
   Free = "free_shipping",
 }
 
+// export declare type ShopInput {
+//   name: Scalars["String"];
+ 
+// }
+
 export type Tax = {
   id?: Maybe<Scalars["ID"]>;
   name?: Maybe<Scalars["String"]>;
@@ -936,6 +941,8 @@ export declare type ShopInput = {
   settings?: Maybe<ShopSettingsInput>;
   categories?: Maybe<Array<Maybe<Scalars["ID"]>>>;
   balance?: Maybe<BalanceInput>;
+  is_active?: Scalars["Boolean"];
+  is_service?: Scalars["Boolean"];
 };
 /** A paginated list of Shop items. */
 

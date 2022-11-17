@@ -32,14 +32,40 @@ export default function Uploader({
         upload(
           acceptedFiles, // it will be an array of uploaded attachments
           {
+            // @ts-ignore
             onSuccess: (data) => {
+              // console.log(data)
+              // console.log({
+              //   thumbnail: data.secure_url,
+              //   original: data.secure_url,
+              //   id: data.asset_id
+              // })
+              
               let mergedData;
               if (multiple) {
-                mergedData = files.concat(data);
-                setFiles(files.concat(data));
+                mergedData = files.concat([{
+                  thumbnail: data.secure_url,
+                  original: data.secure_url,
+                  id: data.asset_id
+                }]);
+                setFiles(files.concat([
+                  {
+                    thumbnail: data.secure_url,
+                    original: data.secure_url,
+                    id: data.asset_id
+                  }
+                ]));
               } else {
-                mergedData = data[0];
-                setFiles(data);
+                mergedData = {
+                  thumbnail: data.secure_url,
+                  original: data.secure_url,
+                  id: data.asset_id
+                };
+                setFiles([{
+                  thumbnail: data.secure_url,
+                  original: data.secure_url,
+                  id: data.asset_id
+                }]);
               }
               if (onChange) {
                 onChange(mergedData);

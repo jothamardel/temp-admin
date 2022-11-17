@@ -15,8 +15,9 @@ import Alert from "@components/ui/alert";
 // @ts-ignore
 import { animateScroll } from "react-scroll";
 import TextArea from "@components/ui/text-area";
-import Radio from "@components/ui/radio/radio";
-import Label from "@components/ui/label";
+// import Radio from "@components/ui/radio/radio";
+// import Label from "@components/ui/label";
+import Checkbox from "@components/ui/checkbox/checkbox";
 
 
 type FormValues = {
@@ -30,8 +31,14 @@ type FormValues = {
   street_address: string;
   is_active: boolean;
   is_service: boolean;
-  cover_image: string;
-  logo: string;
+  cover_image: {
+    thumbnail: string;
+    original: string;
+  };
+  logo: {
+    thumbnail: string;
+    original: string;
+  };
 };
 
 type IProps = {
@@ -54,7 +61,7 @@ export default function CreateOrUpdateAllForm({ initialValues }: IProps) {
     control,
     formState: { errors },
   } = useForm<FormValues>({
-    defaultValues: initialValues ? initialValues : { name: "", values: [] },
+    defaultValues: initialValues ? initialValues : { name: "" },
   });
   
   // @ts-ignore
@@ -71,48 +78,64 @@ export default function CreateOrUpdateAllForm({ initialValues }: IProps) {
 
   const onSubmit = (values: FormValues) => {
     console.log(values);
-    // if (!initialValues) {
-    //   createAttribute(
-    //     {
-    //       variables: {
-    //         input: {
-    //           name: values.name!,
-    //           shop_id: Number(shopId),
-    //           values: values.values,
-    //         },
-    //       },
-    //     },
-    //     {
-    //       onError: (error: any) => {
-    //         setErrorMessage(error?.response?.data?.message);
-    //         // @ts-ignore
-    //         animateScroll.scrollToTop();
-    //       },
-    //     }
-    //   );
-    // } else {
-    //   updateAttribute({
-    //     variables: {
-    //       id: initialValues.id,
-    //       input: {
-    //         name: values.name!,
-    //         shop_id: Number(initialValues?.shop_id),
-    //         values: values.values.map(({ id, value, meta }: any) => ({
-    //           id: Number(id),
-    //           value,
-    //           meta,
-    //         })),
-    //       },
-    //     },
-    //   });
-    // }
+    if (!initialValues) {
+      createAttribute(
+        {
+          variables: {
+            input: {
+              name: values.name!,
+              description: values.description,
+              is_active: values.is_active,
+              is_service: values.is_service,
+              logo: {
+                thumbnail: values.logo.thumbnail,
+                original: values.logo.original
+              },
+              cover_image: {
+                thumbnail: values.cover_image.thumbnail,
+                original: values.cover_image.original
+              },
+              address: {
+                city: values.city,
+                state: values.state,
+                country: values.country,
+                street_address: values.street_address,
+                zip: values.zip
+              }
+            },
+          },
+        },
+        {
+          onError: (error: any) => {
+            setErrorMessage(error?.response?.data?.message);
+            // @ts-ignore
+            animateScroll.scrollToTop();
+          },
+        }
+      );
+    } else {
+      updateAttribute({
+        variables: {
+          id: initialValues.id,
+          input: {
+            name: values.name!,
+            shop_id: Number(initialValues?.shop_id),
+            values: values.values.map(({ id, value, meta }: any) => ({
+              id: Number(id),
+              value,
+              meta,
+            })),
+          },
+        },
+      });
+    }
   };
 
   return (
     <>
       {errorMessage ? (
         <Alert
-          message={t(`common:${errorMessage}`)}
+          message={t(`${errorMessage}`)}
           variant="error"
           closeable={true}
           className="mt-5"
@@ -174,8 +197,7 @@ export default function CreateOrUpdateAllForm({ initialValues }: IProps) {
 
           <Card className="w-full sm:w-8/12 md:w-2/3">
             <div className="flex">
-              <Radio id="active" {...register("is_active")}/>
-              <Label>{t("active")}</Label>
+              <Checkbox id="is_active" {...register("is_active")} label="active"/>
             </div>
     
           </Card>
@@ -278,8 +300,7 @@ export default function CreateOrUpdateAllForm({ initialValues }: IProps) {
 
           <Card className="w-full sm:w-8/12 md:w-2/3">
             <div className="flex">
-              <Radio id="is_service" {...register("is_service")}/>
-              <Label>{"Service"}</Label>
+              <Checkbox id="is_service" {...register("is_service")} label="service"/>
             </div>
           </Card>
         </div>
